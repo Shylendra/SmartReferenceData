@@ -1,0 +1,26 @@
+logging:
+  group:
+    api: com.smartapps.smartaddress.web
+  level:
+    api: trace
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        boot:
+          autoconfigure: ERROR
+spring:
+  application:
+    name: SmartAddress API
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    display-query-params-without-oauth2: true
+    displayRequestDuration: true
+    tagsSorter: alpha
+  version: '@project.version@'
