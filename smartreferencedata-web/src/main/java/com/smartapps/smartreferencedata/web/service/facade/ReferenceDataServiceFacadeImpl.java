@@ -2,6 +2,7 @@ package com.smartapps.smartreferencedata.web.service.facade;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -167,15 +168,15 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 		
-		List<SearchReferenceDataResponseDto> objList = new ArrayList<>();
+		Optional<List<SearchReferenceDataResponseDto>> objList = referenceDataService.search(obj);
 		
 		log.info(messageService.getMessage(
 				SharedMessages.LOG003_RESPONSE, 
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName(),
-						SmartLibraryUtil.mapToString(objList, true)}));
-		return objList;
+						SmartLibraryUtil.mapToString(objList.get(), true)}));
+		return objList.get();
 	}
 
 }

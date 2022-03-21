@@ -16,7 +16,7 @@ public interface ReferenceDataService {
 	public List<ReferenceData> readAll();
 	public ReferenceData readById(final Integer id);
 	public List<ReferenceData> readByRefDataType(final String refDataType);
-	public List<SearchReferenceDataResponseDto> search(final SearchReferenceDataRequestDto searchRequest);
+	public Optional<List<SearchReferenceDataResponseDto>> search(final SearchReferenceDataRequestDto searchCriteria);
 	
 	/* Update */
 	public Optional<ReferenceData> update(final ReferenceData obj);

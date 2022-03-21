@@ -15,6 +15,7 @@ import com.smartapps.smartreferencedata.jpa.dto.SearchReferenceDataRequestDto;
 import com.smartapps.smartreferencedata.jpa.dto.SearchReferenceDataResponseDto;
 import com.smartapps.smartreferencedata.jpa.entities.ReferenceData;
 import com.smartapps.smartreferencedata.jpa.repository.ReferenceDataRepository;
+import com.smartapps.smartreferencedata.jpa.util.SmartReferenceDataJpaUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -77,8 +78,20 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	}
 
 	@Override
-	public List<SearchReferenceDataResponseDto> search(SearchReferenceDataRequestDto searchRequest) {
-		return new ArrayList<>();
+	public Optional<List<SearchReferenceDataResponseDto>> search(SearchReferenceDataRequestDto searchCriteria) {
+		List<SearchReferenceDataResponseDto> searchResponses = new ArrayList<>();
+		Optional<List<ReferenceData>> entityObjList = Optional.ofNullable(repository.findAll(SmartReferenceDataJpaUtil.SearchRefDataSpecification.findByCriteria(searchCriteria)));
+		if(entityObjList.isPresent()) {
+			for(ReferenceData referenceData : entityObjList.get()) {
+				searchResponses.add(SearchReferenceDataResponseDto.builder()
+						.code(referenceData.getRefDataCode())
+						.type(referenceData.getRefDataType())
+						.description(referenceData.getRefDataDescription())
+						.descriptionDetail(referenceData.getRefDataDescriptionDetail()).build());
+			}
+		}
+		
+		return Optional.of(searchResponses);
 	}
 
 	@Override
@@ -116,5 +129,5 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 
 		repository.deleteById(readById(id).getId());
 	}
-
+	
 }
