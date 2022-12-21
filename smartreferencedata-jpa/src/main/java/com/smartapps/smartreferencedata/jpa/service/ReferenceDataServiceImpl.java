@@ -8,14 +8,14 @@ import org.codehaus.plexus.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.smartapps.smartlib.dto.SearchReferenceDataRequestDto;
+import com.smartapps.smartlib.dto.SearchReferenceDataResponseDto;
 import com.smartapps.smartlib.exception.ResourceNotFoundException;
 import com.smartapps.smartlib.service.MessageService;
 import com.smartapps.smartlib.util.SharedMessages;
-import com.smartapps.smartreferencedata.jpa.dto.SearchReferenceDataRequestDto;
-import com.smartapps.smartreferencedata.jpa.dto.SearchReferenceDataResponseDto;
 import com.smartapps.smartreferencedata.jpa.entities.ReferenceData;
 import com.smartapps.smartreferencedata.jpa.repository.ReferenceDataRepository;
-import com.smartapps.smartreferencedata.jpa.util.SmartReferenceDataJpaUtil;
+import com.smartapps.smartreferencedata.jpa.util.RefDataSearchUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,7 +38,20 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return Optional.of(repository.save(obj));
+		Optional<ReferenceData> resp = repository.findByRefDataCodeAndRefDataType(obj.getRefDataCode(), obj.getRefDataType());
+		if(!resp.isPresent()) {
+			return Optional.of(repository.save(obj));
+		}
+//		else {
+//			String desc = StringUtils.isNotEmpty(obj.getRefDataDescription()) ? obj.getRefDataDescription().trim() : "";
+//			String descDetails = StringUtils.isNotEmpty(obj.getRefDataDescriptionDetail()) ? obj.getRefDataDescriptionDetail().trim() : "";
+//			String savedDesc = StringUtils.isNotEmpty(resp.get().getRefDataDescription()) ? resp.get().getRefDataDescription().trim() : "";
+//			String savedDescDetails = StringUtils.isNotEmpty(resp.get().getRefDataDescriptionDetail()) ? resp.get().getRefDataDescriptionDetail().trim() : "";
+//			if(!desc.equals(savedDesc) || !descDetails.equals(savedDescDetails)) {
+//				return update(obj);
+//			}
+//		}
+		return Optional.ofNullable(obj);
 	}
 
 	@Override
@@ -74,13 +87,31 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return repository.findByRefDataType(refDataType);
+		Optional<List<ReferenceData>> resp = repository.findByRefDataType(refDataType);
+		if(resp.isPresent()) {
+			return resp.get();
+		}
+		return new ArrayList<>();
+	}
+
+	@Override
+	public ReferenceData readByRefDataCodeAndRefDataType(String refDataCode, String refDataType) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		Optional<ReferenceData> resp = repository.findByRefDataCodeAndRefDataType(refDataCode, refDataType);
+		if(resp.isPresent()) {
+			return resp.get();
+		}
+		return null;
 	}
 
 	@Override
 	public Optional<List<SearchReferenceDataResponseDto>> search(SearchReferenceDataRequestDto searchCriteria) {
 		List<SearchReferenceDataResponseDto> searchResponses = new ArrayList<>();
-		Optional<List<ReferenceData>> entityObjList = Optional.ofNullable(repository.findAll(SmartReferenceDataJpaUtil.SearchRefDataSpecification.findByCriteria(searchCriteria)));
+		Optional<List<ReferenceData>> entityObjList = Optional.ofNullable(repository.findAll(RefDataSearchUtil.SearchRefDataSpecification.findByCriteria(searchCriteria)));
 		if(entityObjList.isPresent()) {
 			for(ReferenceData referenceData : entityObjList.get()) {
 				searchResponses.add(SearchReferenceDataResponseDto.builder()
@@ -102,32 +133,31 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
-		ReferenceData entityObj = readById(obj.getId());
-		if(StringUtils.isNotEmpty(obj.getRefDataCode())) {
-			entityObj.setRefDataCode(obj.getRefDataCode());
-		}
-		if(StringUtils.isNotEmpty(obj.getRefDataType())) {
-			entityObj.setRefDataType(obj.getRefDataType());
-		}
-		if(StringUtils.isNotEmpty(obj.getRefDataDescription())) {
-			entityObj.setRefDataDescription(obj.getRefDataDescription());
-		}
-		if(StringUtils.isNotEmpty(obj.getRefDataDescriptionDetail())) {
-			entityObj.setRefDataDescriptionDetail(obj.getRefDataDescriptionDetail());
+		Optional<ReferenceData> resp = repository.findByRefDataCodeAndRefDataType(obj.getRefDataCode(), obj.getRefDataType());
+		if(resp.isPresent()) {
+			if(StringUtils.isNotEmpty(obj.getRefDataDescription())) {
+				resp.get().setRefDataDescription(obj.getRefDataDescription());
+			}
+			if(StringUtils.isNotEmpty(obj.getRefDataDescriptionDetail())) {
+				resp.get().setRefDataDescriptionDetail(obj.getRefDataDescriptionDetail());
+			}
+			return Optional.of(repository.save(resp.get()));
 		}
 		
-		return Optional.of(repository.save(entityObj));
+		return Optional.ofNullable(obj);
 	}
 
 	@Override
-	public void deleteById(Integer id) {
+	public void delete(String code, String type) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-
-		repository.deleteById(readById(id).getId());
+		Optional<ReferenceData> resp = repository.findByRefDataCodeAndRefDataType(code, type);
+		if(resp.isPresent()) {
+			repository.deleteById(resp.get().getId());
+		}
 	}
 	
 }

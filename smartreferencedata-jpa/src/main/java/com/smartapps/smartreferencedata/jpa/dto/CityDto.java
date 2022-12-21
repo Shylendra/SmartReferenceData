@@ -15,15 +15,21 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(name = "SearchReferenceDataResponse")
-public class SearchReferenceDataResponseDto implements Serializable {
+@Schema(name = "City")
+public class CityDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String code;
+	private String name;
+	private String countryCode;
+	private String countryName;
+	private String stateCode;
+	private String stateName;
 	private String type;
-	private String description;
-	private String descriptionDetail;
+	private String population;
+	private String latitude;
+	private String longitude;
 
 	@Override
 	public String toString() {

@@ -5,7 +5,14 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+import org.geonames.Toponym;
+import org.geonames.ToponymSearchCriteria;
+import org.geonames.ToponymSearchResult;
+import org.geonames.WebService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,16 +22,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesDelete;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesGet;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesPost;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesPut;
-import com.smartapps.smartreferencedata.jpa.dto.ReferenceDataDto;
-import com.smartapps.smartreferencedata.jpa.dto.SearchReferenceDataRequestDto;
-import com.smartapps.smartreferencedata.jpa.dto.SearchReferenceDataResponseDto;
+import com.smartapps.smartlib.dto.ImportRefDataResponseDto;
+import com.smartapps.smartlib.dto.ReferenceDataDto;
+import com.smartapps.smartlib.dto.RegisterRefDataResponseDto;
+import com.smartapps.smartlib.dto.SearchReferenceDataRequestDto;
+import com.smartapps.smartlib.dto.SearchReferenceDataResponseDto;
+import com.smartapps.smartlib.util.SmartHttpUtil;
 import com.smartapps.smartreferencedata.web.util.SmartReferenceDataWebUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -46,20 +58,33 @@ public class SmartReferenceDataController extends CommonController {
 		return ResponseEntity.ok().body(referenceDataServiceFacade.register(obj));
 	}
 
+	@Operation(summary = SmartReferenceDataWebUtil.REGISTER_REFDATA_TYPE_OPERATION)
+	@GlobalApiReponsesPost
+	@PostMapping(SmartReferenceDataWebUtil.REGISTER_REFDATA_TYPE)
+	public ResponseEntity<RegisterRefDataResponseDto> registerByType(
+			@PathVariable("type") @Valid String type,
+			@Parameter(name = "registerRefdata", description = "JSON with ReferenceDataDto object list in and out", required = true) @Valid @RequestBody List<ReferenceDataDto> objList) 
+			throws JsonProcessingException {
+		return ResponseEntity.ok().body(referenceDataServiceFacade.registerByType(type, objList));
+	}
+
 	@Operation(summary = SmartReferenceDataWebUtil.RETRIEVE_REFDATAS_OPERATION)
 	@GlobalApiReponsesGet
 	@GetMapping(SmartReferenceDataWebUtil.RETRIEVE_REFDATAS)
 	public ResponseEntity<List<ReferenceDataDto>> retrieveAll(HttpServletRequest request) 
-			throws IOException {
+			throws Exception {
+//		  WebService.setGeoNamesServer("api.geonames.org");
+//		  WebService.setUserName("shylendra.tm"); // add your username here
+//		  
+//		  ToponymSearchCriteria searchCriteria = new ToponymSearchCriteria();
+//		  searchCriteria.setQ("Canberra");
+//		  ToponymSearchResult searchResult = WebService.search(searchCriteria);
+//		  for (Toponym toponym : searchResult.getToponyms()) {
+//		     System.out.println(toponym.getName()+"-"+ 
+//		  toponym.getCountryName()+"-"+ 
+//		    		 toponym.getCountryCode());
+//		  }
 		return ResponseEntity.ok().body(referenceDataServiceFacade.retrieveAll());
-	}
-
-	@Operation(summary = SmartReferenceDataWebUtil.RETRIEVE_REFDATA_OPERATION)
-	@GlobalApiReponsesGet
-	@GetMapping(SmartReferenceDataWebUtil.RETRIEVE_REFDATA)
-	public ResponseEntity<ReferenceDataDto> retrieveById(
-			@PathVariable("id") @Valid Integer id) {
-		return ResponseEntity.ok().body(referenceDataServiceFacade.retrieveById(id));
 	}
 
 	@Operation(summary = SmartReferenceDataWebUtil.RETRIEVE_REFDATA_TYPE_OPERATION)
@@ -74,10 +99,12 @@ public class SmartReferenceDataController extends CommonController {
 	@GlobalApiReponsesPut
 	@PutMapping(SmartReferenceDataWebUtil.UPDATE_REFDATA)
 	public ResponseEntity<ReferenceDataDto> update(
-			@PathVariable("id") @Valid Integer id,
+			@PathVariable("code") @Valid String code,
+			@PathVariable("type") @Valid String type,
 			@Parameter(name = "updateReferenceData", description = "JSON with ReferenceDataDto object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj) 
 			throws JsonProcessingException {
-			obj.setId(id);
+			obj.setRefDataCode(code);
+			obj.setRefDataType(type);
 		return ResponseEntity.ok().body(referenceDataServiceFacade.update(obj));
 	}
 
@@ -85,8 +112,9 @@ public class SmartReferenceDataController extends CommonController {
 	@GlobalApiReponsesDelete
 	@DeleteMapping(SmartReferenceDataWebUtil.DELETE_REFDATA)
 	public ResponseEntity<String> deleteById(
-			@PathVariable("id") @Valid Integer id) {
-		referenceDataServiceFacade.deleteById(id);
+			@PathVariable("code") @Valid String code,
+			@PathVariable("type") @Valid String type) {
+		referenceDataServiceFacade.delete(code, type);
 		return ResponseEntity.ok().body("DELETED");
 	}
 
@@ -98,5 +126,31 @@ public class SmartReferenceDataController extends CommonController {
 			throws JsonProcessingException {
 		return ResponseEntity.ok().body(referenceDataServiceFacade.search(obj));
 	}
+
+	@Operation(summary = SmartReferenceDataWebUtil.EXPORT_REFDATAS_OPERATION)
+	@GlobalApiReponsesGet
+	@GetMapping(SmartReferenceDataWebUtil.EXPORT_REFDATAS)
+	public ResponseEntity<byte[]> exportData(
+			@RequestParam(name = "type", required = false) String type) throws JsonProcessingException {
+		
+		String jsonData = referenceDataServiceFacade.exportData(type);
+		String fileName = SmartHttpUtil.getServerHostName(); 
+		
+		return ResponseEntity
+				.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename="+ fileName +".json")
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
+				.contentLength(jsonData.length())
+				.body(jsonData.getBytes());
+	}
+
+
+	@Operation(summary = SmartReferenceDataWebUtil.IMPORT_REFDATAS_OPERATION)
+	@GlobalApiReponsesGet
+	@PostMapping(SmartReferenceDataWebUtil.IMPORT_REFDATAS)
+	public ResponseEntity<ImportRefDataResponseDto> importData(@RequestParam("file") @Valid @NotNull MultipartFile file) throws IOException {
+		return ResponseEntity.ok().body(referenceDataServiceFacade.importData(file));
+	}
 	
+
 }

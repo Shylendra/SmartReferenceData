@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.smartapps.smartlib.service.ClientDetailsService;
 import com.smartapps.smartlib.service.MessageService;
+import com.smartapps.smartreferencedata.web.service.facade.AssetDetailServiceFacade;
+import com.smartapps.smartreferencedata.web.service.facade.ExpenseServiceFacade;
 import com.smartapps.smartreferencedata.web.service.facade.ReferenceDataServiceFacade;
 
 public class CommonController {
@@ -13,6 +15,12 @@ public class CommonController {
 	
 	@Autowired
 	protected ReferenceDataServiceFacade referenceDataServiceFacade;
+	
+	@Autowired
+	protected ExpenseServiceFacade expenseServiceFacade;
+
+	@Autowired
+	protected AssetDetailServiceFacade assetDetailServiceFacade;
 
 	@Autowired
 	protected MessageService messageService;

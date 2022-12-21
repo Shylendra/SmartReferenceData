@@ -3,7 +3,6 @@ package com.smartapps.smartreferencedata.jpa.dto;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.smartapps.smartlib.dto.CommonDto;
 import com.smartapps.smartlib.util.SmartLibraryUtil;
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -16,16 +15,19 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(name = "ReferenceData")
-public class ReferenceDataDto extends CommonDto implements Serializable {
+@Schema(name = "State")
+public class StateDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int id;
-	private String refDataCode;
-	private String refDataType;
-	private String refDataDescription;
-	private String refDataDescriptionDetail;
+	private String code;
+	private String name;
+	private String countryCode;
+	private String countryName;
+	private String type;
+	private String population;
+	private String latitude;
+	private String longitude;
 
 	@Override
 	public String toString() {

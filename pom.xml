@@ -22,7 +22,7 @@
 	<java.version>1.8</java.version>
 	<checkstyle.skip>true</checkstyle.skip>
 	<jacoco.version>0.8.5</jacoco.version>
-	<smart-library.version>b890d66a</smart-library.version>
+	<smart-library.version>bfecfa7f</smart-library.version>
   </properties>
 
   <modules>  

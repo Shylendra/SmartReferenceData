@@ -20,11 +20,16 @@ public class CountryDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String shortName;
+	private String code;
 	private String name;
 	private String region;
+	private String regionCode;
 	private String subRegion;
 	private String phoneCode;
+	private String type;
+	private String population;
+	private String latitude;
+	private String longitude;
 
 	@Override
 	public String toString() {

@@ -1,6 +1,7 @@
 package com.smartapps.smartreferencedata.jpa.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.smartapps.smartlib.util.SmartLibraryUtil;
@@ -15,14 +16,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(name = "SearchReferenceDataRequest")
-public class SearchReferenceDataRequestDto implements Serializable {
+@Schema(name = "CodeValue")
+public class CodeValueDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String code;
-	private String type;
-	private String description;
+	private String value;
+	private List<CodeValueDto> subCodeValues;
 
 	@Override
 	public String toString() {

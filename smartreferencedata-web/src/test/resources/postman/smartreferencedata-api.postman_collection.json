@@ -1,19 +1,981 @@
 {
 	"info": {
-		"_postman_id": "2f82b44a-4556-4d9c-878c-fdf052a84713",
+		"_postman_id": "ab4ac38d-c7f4-4718-a739-034c54aa1e2c",
 		"name": "smartreferencedata-api",
 		"description": "SmartReferenceData REST API Information",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "smartreferencedata-api/refdatas",
+			"name": "smartreferencedata-api",
 			"item": [
 				{
-					"name": "{id}",
+					"name": "refdatas",
 					"item": [
 						{
-							"name": "/refdatas/{id}",
+							"name": "{code}/{type}",
+							"item": [
+								{
+									"name": "/refdatas/{code}/{type}",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refDataDescription\": \"Australia002_UPD\",\n    \"refDataDescriptionDetail\": \"Aussie002_UPD\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"refdatas",
+												":code",
+												":type"
+											],
+											"variable": [
+												{
+													"key": "code",
+													"value": "CT002_TST002",
+													"description": "(Required) "
+												},
+												{
+													"key": "type",
+													"value": "COUNTRY_TYPE_TST",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/refdatas/{code}/{type}",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"refdatas",
+												":code",
+												":type"
+											],
+											"variable": [
+												{
+													"key": "code",
+													"value": "CT002_TST002",
+													"description": "(Required) "
+												},
+												{
+													"key": "type",
+													"value": "COUNTRY_TYPE_TST",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "dolore consectetur eiusmod"
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":code",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "code",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "{type}",
+							"item": [
+								{
+									"name": "/refdatas/{type}",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"refdatas",
+												":type"
+											],
+											"variable": [
+												{
+													"key": "type",
+													"value": "COUNTRY_TYPE_TST",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/refdatas/{type}",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"refDataCode\": \"CT002_TST001\",\n    \"refDataDescription\": \"Australia001\",\n    \"refDataDescriptionDetail\": \"Aussie001\"\n  },\n  {\n    \"refDataCode\": \"CT002_TST002\",\n    \"refDataDescription\": \"Australia002\",\n    \"refDataDescriptionDetail\": \"Aussie002\"\n  }\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"refdatas",
+												":type"
+											],
+											"variable": [
+												{
+													"key": "type",
+													"value": "COUNTRY_TYPE_TST",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"refdatas",
+														":type"
+													],
+													"variable": [
+														{
+															"key": "type",
+															"value": "dolore consectetur eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/refdatas",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -23,21 +985,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1",
-											"description": "(Required) "
-										}
+										"refdatas"
 									]
 								}
 							},
@@ -48,21 +1002,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -84,21 +1030,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -120,21 +1058,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -156,21 +1086,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -192,21 +1114,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -225,9 +1139,9 @@
 							]
 						},
 						{
-							"name": "/refdatas/{id}",
+							"name": "/refdatas",
 							"request": {
-								"method": "PUT",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
@@ -240,7 +1154,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"refDataCode\": \"CT002\",\n    \"refDataType\": \"COUNTRY_TYPE\",\n    \"refDataDescription\": \"Australia-Upd\",\n    \"refDataDescriptionDetail\": \"Aussie-Upd\"\n}",
+									"raw": "{\n    \"refDataCode\": \"CT002_TST\",\n    \"refDataType\": \"COUNTRY_TYPE_TST\",\n    \"refDataDescription\": \"Australia\",\n    \"refDataDescriptionDetail\": \"Aussie\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -248,21 +1162,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1",
-											"description": "(Required) "
-										}
+										"refdatas"
 									]
 								}
 							},
@@ -270,11 +1176,11 @@
 								{
 									"name": "Successfully retrieved.",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -282,21 +1188,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -315,11 +1213,11 @@
 								{
 									"name": "Bad request.",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -327,21 +1225,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -360,11 +1250,11 @@
 								{
 									"name": "You are not authorized to access the resource.",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -372,21 +1262,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -405,11 +1287,11 @@
 								{
 									"name": "Accessing the resource you were trying to reach is forbidden.",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -417,21 +1299,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -450,11 +1324,11 @@
 								{
 									"name": "The resource you were trying to reach is not found.",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -462,161 +1336,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
+											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "text",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "*/*"
-										}
-									],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "/refdatas/{id}",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "*/*"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"refdatas",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "-80243909",
-											"description": "(Required) "
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "*/*"
-										}
-									],
-									"cookie": [],
-									"body": "commodo"
-								},
-								{
-									"name": "Bad request.",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "text",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "*/*"
-										}
-									],
-									"cookie": [],
-									"body": ""
-								},
-								{
-									"name": "The resource you were trying to reach is not found.",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"smartreferencedata-api",
-												"refdatas",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "-80243909",
-													"description": "(Required) "
-												}
+												"refdatas"
 											]
 										}
 									},
@@ -637,171 +1363,7 @@
 					]
 				},
 				{
-					"name": "/refdatas",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "*/*"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"smartreferencedata-api",
-								"refdatas"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Successfully retrieved.",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"refdatas"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						},
-						{
-							"name": "Bad request.",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"refdatas"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						},
-						{
-							"name": "You are not authorized to access the resource.",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"refdatas"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						},
-						{
-							"name": "Accessing the resource you were trying to reach is forbidden.",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"refdatas"
-									]
-								}
-							},
-							"status": "Forbidden",
-							"code": 403,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						},
-						{
-							"name": "The resource you were trying to reach is not found.",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"refdatas"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						}
-					]
-				},
-				{
-					"name": "/refdatas",
+					"name": "/search",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -816,7 +1378,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"refDataCode\": \"CT002\",\n    \"refDataType\": \"COUNTRY_TYPE\",\n    \"refDataDescription\": \"Australia\",\n    \"refDataDescriptionDetail\": \"Aussie\"\n}",
+							"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -824,13 +1386,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+							"raw": "{{baseUrl}}/smartreferencedata-api/search",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartreferencedata-api",
-								"refdatas"
+								"search"
 							]
 						}
 					},
@@ -842,7 +1404,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -850,13 +1412,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas"
+										"search"
 									]
 								}
 							},
@@ -879,7 +1441,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -887,13 +1449,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas"
+										"search"
 									]
 								}
 							},
@@ -916,7 +1478,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -924,13 +1486,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas"
+										"search"
 									]
 								}
 							},
@@ -953,7 +1515,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -961,13 +1523,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas"
+										"search"
 									]
 								}
 							},
@@ -990,7 +1552,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": -84907930,\n  \"refDataCode\": \"Excepteur min\",\n  \"refDataType\": \"irure\",\n  \"refDataDescription\": \"Duis\",\n  \"refDataDescriptionDetail\": \"in consequat amet\"\n}",
+									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -998,13 +1560,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas"
+										"search"
 									]
 								}
 							},
@@ -1023,7 +1585,229 @@
 					]
 				},
 				{
-					"name": "/refdatas/type/{type}",
+					"name": "/import-refdatas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"file\": \"velit\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"smartreferencedata-api",
+								"import-refdatas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"file\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"import-refdatas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "dolore consectetur eiusmod"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"file\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"import-refdatas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "You are not authorized to access the resource.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"file\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"import-refdatas"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "dolore consectetur eiusmod"
+						},
+						{
+							"name": "Accessing the resource you were trying to reach is forbidden.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"file\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"import-refdatas"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "dolore consectetur eiusmod"
+						},
+						{
+							"name": "The resource you were trying to reach is not found.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"file\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"import-refdatas"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/export-refdatas",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1033,22 +1817,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/type/:type",
+							"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartreferencedata-api",
-								"refdatas",
-								"type",
-								":type"
-							],
-							"variable": [
-								{
-									"key": "type",
-									"value": "commodo",
-									"description": "(Required) "
-								}
+								"export-refdatas"
 							]
 						}
 					},
@@ -1059,22 +1834,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/type/:type",
+									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										"type",
-										":type"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "commodo",
-											"description": "(Required) "
-										}
+										"export-refdatas"
 									]
 								}
 							},
@@ -1096,22 +1862,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/type/:type",
+									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										"type",
-										":type"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "commodo",
-											"description": "(Required) "
-										}
+										"export-refdatas"
 									]
 								}
 							},
@@ -1133,22 +1890,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/type/:type",
+									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										"type",
-										":type"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "commodo",
-											"description": "(Required) "
-										}
+										"export-refdatas"
 									]
 								}
 							},
@@ -1170,22 +1918,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/type/:type",
+									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										"type",
-										":type"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "commodo",
-											"description": "(Required) "
-										}
+										"export-refdatas"
 									]
 								}
 							},
@@ -1207,22 +1946,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/type/:type",
+									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas",
-										"type",
-										":type"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "commodo",
-											"description": "(Required) "
-										}
+										"export-refdatas"
 									]
 								}
 							},
