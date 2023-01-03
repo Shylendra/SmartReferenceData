@@ -23,24 +23,26 @@ public class ReferenceDataLoader implements CommandLineRunner {
 		
 		/* Load Data from csv file */
 		System.out.println("*** Load Data from csv file - START ***");
+		
+		/* Load ExpenseCategories.csv */
+		loadData("src/main/resources/data/ExpenseCategories.csv");
+		
+		/* Load AddressTypes.csv */
+		loadData("src/main/resources/data/AddressTypes.csv");
+		
+		System.out.println("*** Load Data from csv file - END ***");
+		
+	}
+	
+	private void loadData(String filePath) throws Exception {
 		CSVRefDataParser csvRefDataParser =  new CSVRefDataParser();
-		List<ReferenceDataCsvDto> referenceDataCsvDtoList = csvRefDataParser.parse("src/main/resources/data/ExpenseCategories.csv", ReferenceDataCsvDto.class);
+		List<ReferenceDataCsvDto> referenceDataCsvDtoList = csvRefDataParser.parse(filePath, ReferenceDataCsvDto.class);
 		for(ReferenceDataCsvDto refDataCsvDto : referenceDataCsvDtoList) {
 			if(!refDataCsvDto.isEmpty()) {
 				ReferenceDataDto referenceDataDto = SmartLibraryUtil.map(refDataCsvDto, ReferenceDataDto.class);
 				referenceDataServiceFacade.register(referenceDataDto);
 			}
 		}
-		
-//		List<ReferenceDataCsvDto> tClassList = new ArrayList<>();
-//		tClassList.add(new ReferenceDataCsvDto("TSTCODE1", "TSTTYP1", "TSTDESC1", "TSTDETDESC1"));
-//		tClassList.add(new ReferenceDataCsvDto("TSTCODE2", "TSTTYP2", "TSTDESC2", "TSTDETDESC2"));
-//		
-//		String writtenFilePath = csvRefDataParser.write("src/main/resources/data/ExpenseCategories_1.csv", tClassList, ReferenceDataCsvDto.class);
-//		System.out.println(">>> writtenFilePath: " + writtenFilePath);
-		
-		System.out.println("*** Load Data from csv file - END ***");
-		
 	}
 
 }

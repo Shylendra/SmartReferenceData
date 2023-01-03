@@ -40,7 +40,7 @@ public class SmartReferenceDataWebUtil {
 	public static final String DELETE_REFDATA = "api/refdatas/{code}/{type}";
 
 	public static final String SEARCH_REFDATA_OPERATION = "Search refdata";
-	public static final String SEARCH_REFDATA = "api/search";
+	public static final String SEARCH_REFDATA = "api/refdatas/search";
 
 	/* ExpenseController Settings */
 	public static final String EXPENSE_CATEGORIES_OPERATION = "Retrieve expense categories";
