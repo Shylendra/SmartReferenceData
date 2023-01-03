@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "ab4ac38d-c7f4-4718-a739-034c54aa1e2c",
+		"_postman_id": "574c3329-ea7a-4f8c-8e6e-a72664ac3009",
 		"name": "smartreferencedata-api",
 		"description": "SmartReferenceData REST API Information",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "smartreferencedata-api",
+			"name": "smartreferencedata-api/api",
 			"item": [
 				{
 					"name": "refdatas",
@@ -16,22 +16,36 @@
 							"name": "{code}/{type}",
 							"item": [
 								{
-									"name": "/refdatas/{code}/{type}",
+									"name": "/api/refdatas/{code}/{type}",
 									"request": {
 										"method": "PUT",
 										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											},
 											{
 												"key": "Content-Type",
 												"value": "application/json"
 											},
 											{
 												"key": "Accept",
-												"value": "*/*"
+												"value": "application/json"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"refDataDescription\": \"Australia002_UPD\",\n    \"refDataDescriptionDetail\": \"Aussie002_UPD\"\n}",
+											"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -39,12 +53,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas",
 												":code",
 												":type"
@@ -52,12 +67,12 @@
 											"variable": [
 												{
 													"key": "code",
-													"value": "CT002_TST002",
+													"value": "culpa Ut in quis",
 													"description": "(Required) "
 												},
 												{
 													"key": "type",
-													"value": "COUNTRY_TYPE_TST",
+													"value": "culpa Ut in quis",
 													"description": "(Required) "
 												}
 											]
@@ -68,10 +83,25 @@
 											"name": "Successfully retrieved.",
 											"originalRequest": {
 												"method": "PUT",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -79,12 +109,13 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -92,12 +123,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -105,24 +136,39 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}"
 										},
 										{
 											"name": "Bad request.",
 											"originalRequest": {
 												"method": "PUT",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -130,12 +176,13 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -143,12 +190,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -156,7 +203,7 @@
 											},
 											"status": "Bad Request",
 											"code": 400,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -164,16 +211,31 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										},
 										{
 											"name": "You are not authorized to access the resource.",
 											"originalRequest": {
 												"method": "PUT",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -181,12 +243,13 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -194,12 +257,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -207,24 +270,39 @@
 											},
 											"status": "Unauthorized",
 											"code": 401,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}"
 										},
 										{
 											"name": "Accessing the resource you were trying to reach is forbidden.",
 											"originalRequest": {
 												"method": "PUT",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -232,12 +310,13 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -245,12 +324,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -258,24 +337,39 @@
 											},
 											"status": "Forbidden",
 											"code": 403,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}"
 										},
 										{
 											"name": "The resource you were trying to reach is not found.",
 											"originalRequest": {
 												"method": "PUT",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+													"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -283,12 +377,13 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -296,12 +391,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -309,7 +404,7 @@
 											},
 											"status": "Not Found",
 											"code": 404,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -317,27 +412,42 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										}
 									]
 								},
 								{
-									"name": "/refdatas/{code}/{type}",
+									"name": "/api/refdatas/{code}/{type}",
 									"request": {
 										"method": "DELETE",
 										"header": [
 											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											},
+											{
 												"key": "Accept",
-												"value": "*/*"
+												"value": "application/json"
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas",
 												":code",
 												":type"
@@ -345,12 +455,12 @@
 											"variable": [
 												{
 													"key": "code",
-													"value": "CT002_TST002",
+													"value": "culpa Ut in quis",
 													"description": "(Required) "
 												},
 												{
 													"key": "type",
-													"value": "COUNTRY_TYPE_TST",
+													"value": "culpa Ut in quis",
 													"description": "(Required) "
 												}
 											]
@@ -361,14 +471,30 @@
 											"name": "OK",
 											"originalRequest": {
 												"method": "DELETE",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -376,12 +502,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -389,28 +515,44 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": "dolore consectetur eiusmod"
+											"body": "\"culpa Ut in quis\""
 										},
 										{
 											"name": "Bad request.",
 											"originalRequest": {
 												"method": "DELETE",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -418,12 +560,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -431,7 +573,7 @@
 											},
 											"status": "Bad Request",
 											"code": 400,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -439,20 +581,36 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										},
 										{
 											"name": "The resource you were trying to reach is not found.",
 											"originalRequest": {
 												"method": "DELETE",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:code/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:code/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":code",
 														":type"
@@ -460,12 +618,12 @@
 													"variable": [
 														{
 															"key": "code",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														},
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -473,7 +631,7 @@
 											},
 											"status": "Not Found",
 											"code": 404,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -481,7 +639,7 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										}
 									]
 								}
@@ -491,29 +649,30 @@
 							"name": "{type}",
 							"item": [
 								{
-									"name": "/refdatas/{type}",
+									"name": "/api/refdatas/{type}",
 									"request": {
 										"method": "GET",
 										"header": [
 											{
 												"key": "Accept",
-												"value": "*/*"
+												"value": "application/json"
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas",
 												":type"
 											],
 											"variable": [
 												{
 													"key": "type",
-													"value": "COUNTRY_TYPE_TST",
+													"value": "culpa Ut in quis",
 													"description": "(Required) "
 												}
 											]
@@ -526,19 +685,20 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -546,15 +706,15 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "[\n  {\n    \"id\": -17494210,\n    \"refDataCode\": \"commodo minim sint veniam\",\n    \"refDataType\": \"cill\",\n    \"refDataDescription\": \"non ad \",\n    \"refDataDescriptionDetail\": \"eiusmod sed fugiat\"\n  },\n  {\n    \"id\": 56092603,\n    \"refDataCode\": \"deserunt sit aute\",\n    \"refDataType\": \"voluptate sunt consectetur laboris incididunt\",\n    \"refDataDescription\": \"cupidatat labore minim\",\n    \"refDataDescriptionDetail\": \"elit deserunt\"\n  }\n]"
 										},
 										{
 											"name": "Bad request.",
@@ -562,19 +722,20 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -582,7 +743,7 @@
 											},
 											"status": "Bad Request",
 											"code": 400,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -590,7 +751,7 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										},
 										{
 											"name": "You are not authorized to access the resource.",
@@ -598,19 +759,20 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -618,15 +780,15 @@
 											},
 											"status": "Unauthorized",
 											"code": 401,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "[\n  {\n    \"id\": -17494210,\n    \"refDataCode\": \"commodo minim sint veniam\",\n    \"refDataType\": \"cill\",\n    \"refDataDescription\": \"non ad \",\n    \"refDataDescriptionDetail\": \"eiusmod sed fugiat\"\n  },\n  {\n    \"id\": 56092603,\n    \"refDataCode\": \"deserunt sit aute\",\n    \"refDataType\": \"voluptate sunt consectetur laboris incididunt\",\n    \"refDataDescription\": \"cupidatat labore minim\",\n    \"refDataDescriptionDetail\": \"elit deserunt\"\n  }\n]"
 										},
 										{
 											"name": "Accessing the resource you were trying to reach is forbidden.",
@@ -634,19 +796,20 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -654,15 +817,15 @@
 											},
 											"status": "Forbidden",
 											"code": 403,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "[\n  {\n    \"id\": -17494210,\n    \"refDataCode\": \"commodo minim sint veniam\",\n    \"refDataType\": \"cill\",\n    \"refDataDescription\": \"non ad \",\n    \"refDataDescriptionDetail\": \"eiusmod sed fugiat\"\n  },\n  {\n    \"id\": 56092603,\n    \"refDataCode\": \"deserunt sit aute\",\n    \"refDataType\": \"voluptate sunt consectetur laboris incididunt\",\n    \"refDataDescription\": \"cupidatat labore minim\",\n    \"refDataDescriptionDetail\": \"elit deserunt\"\n  }\n]"
 										},
 										{
 											"name": "The resource you were trying to reach is not found.",
@@ -670,19 +833,20 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -690,7 +854,7 @@
 											},
 											"status": "Not Found",
 											"code": 404,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -698,27 +862,41 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										}
 									]
 								},
 								{
-									"name": "/refdatas/{type}",
+									"name": "/api/refdatas/{type}",
 									"request": {
 										"method": "POST",
 										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "SMART_APP1"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "testUser"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "ADMIN"
+											},
 											{
 												"key": "Content-Type",
 												"value": "application/json"
 											},
 											{
 												"key": "Accept",
-												"value": "*/*"
+												"value": "application/json"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "[\n  {\n    \"refDataCode\": \"CT002_TST001\",\n    \"refDataDescription\": \"Australia001\",\n    \"refDataDescriptionDetail\": \"Aussie001\"\n  },\n  {\n    \"refDataCode\": \"CT002_TST002\",\n    \"refDataDescription\": \"Australia002\",\n    \"refDataDescriptionDetail\": \"Aussie002\"\n  }\n]",
+											"raw": "[\n  {\n    \"id\": -33367424,\n    \"refDataCode\": \"Ut non a\",\n    \"refDataType\": \"nulla\",\n    \"refDataDescription\": \"minim ut in\",\n    \"refDataDescriptionDetail\": \"culpa ad occaecat consequat\"\n  },\n  {\n    \"id\": -4743162,\n    \"refDataCode\": \"commodo eiusmod\",\n    \"refDataType\": \"consequat labore tempor adipisicing\",\n    \"refDataDescription\": \"ad et aute laboris\",\n    \"refDataDescriptionDetail\": \"est tempor nostrud\"\n  }\n]",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -726,19 +904,20 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas",
 												":type"
 											],
 											"variable": [
 												{
 													"key": "type",
-													"value": "COUNTRY_TYPE_TST",
+													"value": "culpa Ut in quis",
 													"description": "(Required) "
 												}
 											]
@@ -749,10 +928,25 @@
 											"name": "Successfully retrieved.",
 											"originalRequest": {
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"raw": "[\n  {\n    \"id\": 46513032,\n    \"refDataCode\": \"aliqua ut dolor consequat ut\",\n    \"refDataType\": \"enim nisi aliqua dolor magna\",\n    \"refDataDescription\": \"ea sint\",\n    \"refDataDescriptionDetail\": \"sed Ut dolor in\"\n  },\n  {\n    \"id\": 50011486,\n    \"refDataCode\": \"incididunt dolor eu irure ipsum\",\n    \"refDataType\": \"deserunt in\",\n    \"refDataDescription\": \"ex laborum\",\n    \"refDataDescriptionDetail\": \"no\"\n  }\n]",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -760,19 +954,20 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -780,24 +975,39 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n  \"refDataType\": \"laboris\",\n  \"refDataCodes\": [\n    \"officia deserunt anim\",\n    \"enim nostrud elit dolore\"\n  ],\n  \"createCount\": -5909771,\n  \"updateCount\": 25249651\n}"
 										},
 										{
 											"name": "Bad request.",
 											"originalRequest": {
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"raw": "[\n  {\n    \"id\": 46513032,\n    \"refDataCode\": \"aliqua ut dolor consequat ut\",\n    \"refDataType\": \"enim nisi aliqua dolor magna\",\n    \"refDataDescription\": \"ea sint\",\n    \"refDataDescriptionDetail\": \"sed Ut dolor in\"\n  },\n  {\n    \"id\": 50011486,\n    \"refDataCode\": \"incididunt dolor eu irure ipsum\",\n    \"refDataType\": \"deserunt in\",\n    \"refDataDescription\": \"ex laborum\",\n    \"refDataDescriptionDetail\": \"no\"\n  }\n]",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -805,19 +1015,20 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -825,7 +1036,7 @@
 											},
 											"status": "Bad Request",
 											"code": 400,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -833,16 +1044,31 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										},
 										{
 											"name": "You are not authorized to access the resource.",
 											"originalRequest": {
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"raw": "[\n  {\n    \"id\": 46513032,\n    \"refDataCode\": \"aliqua ut dolor consequat ut\",\n    \"refDataType\": \"enim nisi aliqua dolor magna\",\n    \"refDataDescription\": \"ea sint\",\n    \"refDataDescriptionDetail\": \"sed Ut dolor in\"\n  },\n  {\n    \"id\": 50011486,\n    \"refDataCode\": \"incididunt dolor eu irure ipsum\",\n    \"refDataType\": \"deserunt in\",\n    \"refDataDescription\": \"ex laborum\",\n    \"refDataDescriptionDetail\": \"no\"\n  }\n]",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -850,19 +1076,20 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -870,24 +1097,39 @@
 											},
 											"status": "Unauthorized",
 											"code": 401,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n  \"refDataType\": \"quis\",\n  \"refDataCodes\": [\n    \"dolor in ut\",\n    \"reprehenderit magna aute anim\"\n  ],\n  \"createCount\": -9577688,\n  \"updateCount\": 21474852\n}"
 										},
 										{
 											"name": "Accessing the resource you were trying to reach is forbidden.",
 											"originalRequest": {
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"raw": "[\n  {\n    \"id\": 46513032,\n    \"refDataCode\": \"aliqua ut dolor consequat ut\",\n    \"refDataType\": \"enim nisi aliqua dolor magna\",\n    \"refDataDescription\": \"ea sint\",\n    \"refDataDescriptionDetail\": \"sed Ut dolor in\"\n  },\n  {\n    \"id\": 50011486,\n    \"refDataCode\": \"incididunt dolor eu irure ipsum\",\n    \"refDataType\": \"deserunt in\",\n    \"refDataDescription\": \"ex laborum\",\n    \"refDataDescriptionDetail\": \"no\"\n  }\n]",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -895,19 +1137,20 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -915,24 +1158,39 @@
 											},
 											"status": "Forbidden",
 											"code": 403,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
-													"value": "*/*"
+													"value": "application/json"
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{\n  \"refDataType\": \"quis\",\n  \"refDataCodes\": [\n    \"dolor in ut\",\n    \"reprehenderit magna aute anim\"\n  ],\n  \"createCount\": -9577688,\n  \"updateCount\": 21474852\n}"
 										},
 										{
 											"name": "The resource you were trying to reach is not found.",
 											"originalRequest": {
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n  {\n    \"id\": -8169160,\n    \"refDataCode\": \"cupidatat sint\",\n    \"refDataType\": \"cupidatat dolor\",\n    \"refDataDescription\": \"ut aliqua laboris sint\",\n    \"refDataDescriptionDetail\": \"occaecat laboris\"\n  },\n  {\n    \"id\": -59938865,\n    \"refDataCode\": \"quis aliqua sunt\",\n    \"refDataType\": \"ut non \",\n    \"refDataDescription\": \"minim ex officia ad\",\n    \"refDataDescriptionDetail\": \"proident velit eu\"\n  }\n]",
+													"raw": "[\n  {\n    \"id\": 46513032,\n    \"refDataCode\": \"aliqua ut dolor consequat ut\",\n    \"refDataType\": \"enim nisi aliqua dolor magna\",\n    \"refDataDescription\": \"ea sint\",\n    \"refDataDescriptionDetail\": \"sed Ut dolor in\"\n  },\n  {\n    \"id\": 50011486,\n    \"refDataCode\": \"incididunt dolor eu irure ipsum\",\n    \"refDataType\": \"deserunt in\",\n    \"refDataDescription\": \"ex laborum\",\n    \"refDataDescriptionDetail\": \"no\"\n  }\n]",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -940,19 +1198,20 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/smartreferencedata-api/refdatas/:type",
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/:type",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"smartreferencedata-api",
+														"api",
 														"refdatas",
 														":type"
 													],
 													"variable": [
 														{
 															"key": "type",
-															"value": "dolore consectetur eiusmod",
+															"value": "culpa Ut in quis",
 															"description": "(Required) "
 														}
 													]
@@ -960,7 +1219,7 @@
 											},
 											"status": "Not Found",
 											"code": 404,
-											"_postman_previewlanguage": "text",
+											"_postman_previewlanguage": "json",
 											"header": [
 												{
 													"key": "Content-Type",
@@ -968,29 +1227,30 @@
 												}
 											],
 											"cookie": [],
-											"body": ""
+											"body": "{}"
 										}
 									]
 								}
 							]
 						},
 						{
-							"name": "/refdatas",
+							"name": "/api/refdatas",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "*/*"
+										"value": "application/json"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
+										"api",
 										"refdatas"
 									]
 								}
@@ -1002,27 +1262,28 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas"
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
-											"value": "*/*"
+											"value": "application/json"
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "[\n  {\n    \"id\": -17494210,\n    \"refDataCode\": \"commodo minim sint veniam\",\n    \"refDataType\": \"cill\",\n    \"refDataDescription\": \"non ad \",\n    \"refDataDescriptionDetail\": \"eiusmod sed fugiat\"\n  },\n  {\n    \"id\": 56092603,\n    \"refDataCode\": \"deserunt sit aute\",\n    \"refDataType\": \"voluptate sunt consectetur laboris incididunt\",\n    \"refDataDescription\": \"cupidatat labore minim\",\n    \"refDataDescriptionDetail\": \"elit deserunt\"\n  }\n]"
 								},
 								{
 									"name": "Bad request.",
@@ -1030,19 +1291,20 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas"
 											]
 										}
 									},
 									"status": "Bad Request",
 									"code": 400,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
@@ -1050,7 +1312,7 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{}"
 								},
 								{
 									"name": "You are not authorized to access the resource.",
@@ -1058,27 +1320,28 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas"
 											]
 										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
-											"value": "*/*"
+											"value": "application/json"
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "[\n  {\n    \"id\": -17494210,\n    \"refDataCode\": \"commodo minim sint veniam\",\n    \"refDataType\": \"cill\",\n    \"refDataDescription\": \"non ad \",\n    \"refDataDescriptionDetail\": \"eiusmod sed fugiat\"\n  },\n  {\n    \"id\": 56092603,\n    \"refDataCode\": \"deserunt sit aute\",\n    \"refDataType\": \"voluptate sunt consectetur laboris incididunt\",\n    \"refDataDescription\": \"cupidatat labore minim\",\n    \"refDataDescriptionDetail\": \"elit deserunt\"\n  }\n]"
 								},
 								{
 									"name": "Accessing the resource you were trying to reach is forbidden.",
@@ -1086,27 +1349,28 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas"
 											]
 										}
 									},
 									"status": "Forbidden",
 									"code": 403,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
-											"value": "*/*"
+											"value": "application/json"
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "[\n  {\n    \"id\": -17494210,\n    \"refDataCode\": \"commodo minim sint veniam\",\n    \"refDataType\": \"cill\",\n    \"refDataDescription\": \"non ad \",\n    \"refDataDescriptionDetail\": \"eiusmod sed fugiat\"\n  },\n  {\n    \"id\": 56092603,\n    \"refDataCode\": \"deserunt sit aute\",\n    \"refDataType\": \"voluptate sunt consectetur laboris incididunt\",\n    \"refDataDescription\": \"cupidatat labore minim\",\n    \"refDataDescriptionDetail\": \"elit deserunt\"\n  }\n]"
 								},
 								{
 									"name": "The resource you were trying to reach is not found.",
@@ -1114,19 +1378,20 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
+												"api",
 												"refdatas"
 											]
 										}
 									},
 									"status": "Not Found",
 									"code": 404,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
@@ -1134,12 +1399,329 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{}"
 								}
 							]
 						},
 						{
-							"name": "/refdatas",
+							"name": "/api/refdatas",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) ",
+										"key": "APP_ID",
+										"value": "SMART_APP1"
+									},
+									{
+										"description": "(Required) ",
+										"key": "USER_ID",
+										"value": "testUser"
+									},
+									{
+										"key": "USER_GROUPS",
+										"value": "ADMIN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refDataCode\": \"CT002\",\n    \"refDataType\": \"COUNTRY_TYPE\",\n    \"refDataDescription\": \"Australia\",\n    \"refDataDescriptionDetail\": \"Aussie\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"refdatas"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}"
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}"
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 76509923,\n  \"refDataCode\": \"consectetur Duis aliquip\",\n  \"refDataType\": \"id aliqui\",\n  \"refDataDescription\": \"reprehenderit dolore anim\",\n  \"refDataDescriptionDetail\": \"laborum elit sed in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						},
+						{
+							"name": "/api/refdatas/import-data",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1149,12 +1731,33 @@
 									},
 									{
 										"key": "Accept",
-										"value": "*/*"
+										"value": "application/json"
+									},
+									{
+										"key": "APP_ID",
+										"value": "SMART_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "USER_GROUPS",
+										"value": "ADMIN",
+										"type": "text"
 									}
 								],
 								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"refDataCode\": \"CT002_TST\",\n    \"refDataType\": \"COUNTRY_TYPE_TST\",\n    \"refDataDescription\": \"Australia\",\n    \"refDataDescriptionDetail\": \"Aussie\"\n}",
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file\n",
+											"value": "",
+											"type": "text"
+										}
+									],
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1162,13 +1765,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/import-data",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"refdatas"
+										"api",
+										"refdatas",
+										"import-data"
 									]
 								}
 							},
@@ -1180,7 +1785,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+											"raw": "{\n  \"file\": \"mollit velit\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1188,27 +1793,29 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/import-data",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas"
+												"api",
+												"refdatas",
+												"import-data"
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
-											"value": "*/*"
+											"value": "application/json"
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{\n  \"recordsToImport\": -64455127,\n  \"created\": -88852885,\n  \"updated\": 60653178,\n  \"status\": \"mollit voluptate\"\n}"
 								},
 								{
 									"name": "Bad request.",
@@ -1217,7 +1824,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+											"raw": "{\n  \"file\": \"mollit velit\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1225,19 +1832,21 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/import-data",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas"
+												"api",
+												"refdatas",
+												"import-data"
 											]
 										}
 									},
 									"status": "Bad Request",
 									"code": 400,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
@@ -1245,7 +1854,7 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{}"
 								},
 								{
 									"name": "You are not authorized to access the resource.",
@@ -1254,7 +1863,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+											"raw": "{\n  \"file\": \"mollit velit\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1262,27 +1871,29 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/import-data",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas"
+												"api",
+												"refdatas",
+												"import-data"
 											]
 										}
 									},
 									"status": "Unauthorized",
 									"code": 401,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
-											"value": "*/*"
+											"value": "application/json"
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{\n  \"recordsToImport\": -64455127,\n  \"created\": -88852885,\n  \"updated\": 60653178,\n  \"status\": \"mollit voluptate\"\n}"
 								},
 								{
 									"name": "Accessing the resource you were trying to reach is forbidden.",
@@ -1291,7 +1902,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+											"raw": "{\n  \"file\": \"mollit velit\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1299,27 +1910,29 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/import-data",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas"
+												"api",
+												"refdatas",
+												"import-data"
 											]
 										}
 									},
 									"status": "Forbidden",
 									"code": 403,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
-											"value": "*/*"
+											"value": "application/json"
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{\n  \"recordsToImport\": -64455127,\n  \"created\": -88852885,\n  \"updated\": 60653178,\n  \"status\": \"mollit voluptate\"\n}"
 								},
 								{
 									"name": "The resource you were trying to reach is not found.",
@@ -1328,7 +1941,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": -99242689,\n  \"refDataCode\": \"in aliqua officia\",\n  \"refDataType\": \"sed nisi non voluptate esse\",\n  \"refDataDescription\": \"commodo\",\n  \"refDataDescriptionDetail\": \"tempor aute in quis\"\n}",
+											"raw": "{\n  \"file\": \"mollit velit\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1336,19 +1949,21 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/smartreferencedata-api/refdatas",
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/import-data",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"smartreferencedata-api",
-												"refdatas"
+												"api",
+												"refdatas",
+												"import-data"
 											]
 										}
 									},
 									"status": "Not Found",
 									"code": 404,
-									"_postman_previewlanguage": "text",
+									"_postman_previewlanguage": "json",
 									"header": [
 										{
 											"key": "Content-Type",
@@ -1356,14 +1971,2721 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": "{}"
+								}
+							]
+						},
+						{
+							"name": "/api/refdatas/export-data?",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/export-data?type=culpa Ut in quis",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"refdatas",
+										"export-data"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "culpa Ut in quis"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/export-data?type=culpa Ut in quis",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas",
+												"export-data"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "culpa Ut in quis"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  \"a\",\n  \"ipsum dolor\"\n]"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/export-data?type=culpa Ut in quis",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas",
+												"export-data"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "culpa Ut in quis"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/export-data?type=culpa Ut in quis",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas",
+												"export-data"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "culpa Ut in quis"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  \"a\",\n  \"ipsum dolor\"\n]"
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/export-data?type=culpa Ut in quis",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas",
+												"export-data"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "culpa Ut in quis"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  \"a\",\n  \"ipsum dolor\"\n]"
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/refdatas/export-data?type=culpa Ut in quis",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"refdatas",
+												"export-data"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "culpa Ut in quis"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
 								}
 							]
 						}
 					]
 				},
 				{
-					"name": "/search",
+					"name": "assetdetails",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/assetdetails/{id}",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-61594585",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}"
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}"
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}"
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								},
+								{
+									"name": "/api/assetdetails/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "SMART_APP1"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "testUser"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "ADMIN"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-61594585",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}"
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}"
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}"
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								},
+								{
+									"name": "/api/assetdetails/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "SMART_APP1"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "testUser"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "ADMIN"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-61594585",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "\"culpa Ut in quis\""
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "(Required) ",
+														"key": "APP_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"description": "(Required) ",
+														"key": "USER_ID",
+														"value": "culpa Ut in quis"
+													},
+													{
+														"key": "USER_GROUPS",
+														"value": "culpa Ut in quis"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"assetdetails",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "-61594585",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/assetdetails",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) ",
+										"key": "APP_ID",
+										"value": "culpa Ut in quis"
+									},
+									{
+										"description": "(Required) ",
+										"key": "USER_ID",
+										"value": "culpa Ut in quis"
+									},
+									{
+										"key": "USER_GROUPS",
+										"value": "culpa Ut in quis"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"host\": \"https://s3.cloudLocation.amazonaws.com\",\n    \"bucketName\": \"smartapps-assets\",\n    \"procApprId\": \"SMART-PROFILE2\",\n    \"procUserId\": \"USER002\",\n    \"type\": \"image\",\n    \"name\": \"Front_20220618071824.jpeg\",\n    \"category\": \"PROFILE\",\n    \"journeyDate\": \"2022-06-20\",\n    \"filePath\": \"/image/SMART-PROFILE/USER001/ALBUM/Front_20220618071824.jpeg\",\n    \"url\": \"https://s3.cloudLocation.amazonaws.com/smartapps-assets/image/SMART-PROFILE/USER001/ALBUM/Front_20220618071824.jpeg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"assetdetails"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 36268815,\n    \"host\": \"sunt fugiat mollit\",\n    \"bucketName\": \"id ad magna ex\",\n    \"type\": \"ex cillum irure qui quis\",\n    \"name\": \"aute Duis eu incididunt\",\n    \"category\": \"sit est nulla esse\",\n    \"journeyDate\": \"exercitation\",\n    \"filePath\": \"exercitation voluptate nisi amet\",\n    \"url\": \"adipisicing ipsum officia aliqua\",\n    \"lastModified\": \"tempor ipsum consequat d\",\n    \"size\": 72573662,\n    \"etag\": \"tempor minim\"\n  },\n  {\n    \"id\": 70393134,\n    \"host\": \"fugiat labore\",\n    \"bucketName\": \"commodo in officia irure\",\n    \"type\": \"nisi consectetur magna occaecat\",\n    \"name\": \"enim et\",\n    \"category\": \"Lorem officia laborum\",\n    \"journeyDate\": \"Duis minim\",\n    \"filePath\": \"in cillum qui in\",\n    \"url\": \"sunt commodo occaecat veniam\",\n    \"lastModified\": \"magna Lorem eiusmod\",\n    \"size\": -19394951,\n    \"etag\": \"Duis amet cupidatat sed\"\n  }\n]"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 36268815,\n    \"host\": \"sunt fugiat mollit\",\n    \"bucketName\": \"id ad magna ex\",\n    \"type\": \"ex cillum irure qui quis\",\n    \"name\": \"aute Duis eu incididunt\",\n    \"category\": \"sit est nulla esse\",\n    \"journeyDate\": \"exercitation\",\n    \"filePath\": \"exercitation voluptate nisi amet\",\n    \"url\": \"adipisicing ipsum officia aliqua\",\n    \"lastModified\": \"tempor ipsum consequat d\",\n    \"size\": 72573662,\n    \"etag\": \"tempor minim\"\n  },\n  {\n    \"id\": 70393134,\n    \"host\": \"fugiat labore\",\n    \"bucketName\": \"commodo in officia irure\",\n    \"type\": \"nisi consectetur magna occaecat\",\n    \"name\": \"enim et\",\n    \"category\": \"Lorem officia laborum\",\n    \"journeyDate\": \"Duis minim\",\n    \"filePath\": \"in cillum qui in\",\n    \"url\": \"sunt commodo occaecat veniam\",\n    \"lastModified\": \"magna Lorem eiusmod\",\n    \"size\": -19394951,\n    \"etag\": \"Duis amet cupidatat sed\"\n  }\n]"
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 36268815,\n    \"host\": \"sunt fugiat mollit\",\n    \"bucketName\": \"id ad magna ex\",\n    \"type\": \"ex cillum irure qui quis\",\n    \"name\": \"aute Duis eu incididunt\",\n    \"category\": \"sit est nulla esse\",\n    \"journeyDate\": \"exercitation\",\n    \"filePath\": \"exercitation voluptate nisi amet\",\n    \"url\": \"adipisicing ipsum officia aliqua\",\n    \"lastModified\": \"tempor ipsum consequat d\",\n    \"size\": 72573662,\n    \"etag\": \"tempor minim\"\n  },\n  {\n    \"id\": 70393134,\n    \"host\": \"fugiat labore\",\n    \"bucketName\": \"commodo in officia irure\",\n    \"type\": \"nisi consectetur magna occaecat\",\n    \"name\": \"enim et\",\n    \"category\": \"Lorem officia laborum\",\n    \"journeyDate\": \"Duis minim\",\n    \"filePath\": \"in cillum qui in\",\n    \"url\": \"sunt commodo occaecat veniam\",\n    \"lastModified\": \"magna Lorem eiusmod\",\n    \"size\": -19394951,\n    \"etag\": \"Duis amet cupidatat sed\"\n  }\n]"
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "(Required) ",
+												"key": "APP_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"description": "(Required) ",
+												"key": "USER_ID",
+												"value": "culpa Ut in quis"
+											},
+											{
+												"key": "USER_GROUPS",
+												"value": "culpa Ut in quis"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 22897239,\n  \"host\": \"eu sunt\",\n  \"bucketName\": \"et irure minim nisi laborum\",\n  \"type\": \"velit sunt ex\",\n  \"name\": \"minim\",\n  \"category\": \"qui adipisicing sint\",\n  \"journeyDate\": \"dolore enim\",\n  \"filePath\": \"dolor pariatur in ipsum\",\n  \"url\": \"commodo culpa ut\",\n  \"lastModified\": \"qu\",\n  \"size\": 37841581,\n  \"etag\": \"non ut cillum nulla\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/assetdetails",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"assetdetails"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "countries",
+					"item": [
+						{
+							"name": "{countryCode}",
+							"item": [
+								{
+									"name": "states",
+									"item": [
+										{
+											"name": "{stateCode}",
+											"item": [
+												{
+													"name": "/api/countries/{countryCode}/states/{stateCode}",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states",
+																":stateCode"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "stateCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Successfully retrieved.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"code\": \"cillum Excepteur nisi\",\n  \"value\": \"nostrud Duis amet\"\n}"
+														},
+														{
+															"name": "Bad request.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{}"
+														},
+														{
+															"name": "You are not authorized to access the resource.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"code\": \"cillum Excepteur nisi\",\n  \"value\": \"nostrud Duis amet\"\n}"
+														},
+														{
+															"name": "Accessing the resource you were trying to reach is forbidden.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"code\": \"cillum Excepteur nisi\",\n  \"value\": \"nostrud Duis amet\"\n}"
+														},
+														{
+															"name": "The resource you were trying to reach is not found.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{}"
+														}
+													]
+												},
+												{
+													"name": "/api/countries/{countryCode}/states/{stateCode}/cities",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode/cities",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states",
+																":stateCode",
+																"cities"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "stateCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Successfully retrieved.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode/cities",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode",
+																		"cities"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+														},
+														{
+															"name": "Bad request.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode/cities",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode",
+																		"cities"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{}"
+														},
+														{
+															"name": "You are not authorized to access the resource.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode/cities",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode",
+																		"cities"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+														},
+														{
+															"name": "Accessing the resource you were trying to reach is forbidden.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode/cities",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode",
+																		"cities"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+														},
+														{
+															"name": "The resource you were trying to reach is not found.",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states/:stateCode/cities",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"smartreferencedata-api",
+																		"api",
+																		"countries",
+																		":countryCode",
+																		"states",
+																		":stateCode",
+																		"cities"
+																	],
+																	"variable": [
+																		{
+																			"key": "countryCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "stateCode",
+																			"value": "culpa Ut in quis",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "/api/countries/{countryCode}/states",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode",
+														"states"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Successfully retrieved.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+												},
+												{
+													"name": "Bad request.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{}"
+												},
+												{
+													"name": "You are not authorized to access the resource.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+												},
+												{
+													"name": "Accessing the resource you were trying to reach is forbidden.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+												},
+												{
+													"name": "The resource you were trying to reach is not found.",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/states",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"smartreferencedata-api",
+																"api",
+																"countries",
+																":countryCode",
+																"states"
+															],
+															"variable": [
+																{
+																	"key": "countryCode",
+																	"value": "culpa Ut in quis",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "/api/countries/{countryCode}",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries",
+												":countryCode"
+											],
+											"variable": [
+												{
+													"key": "countryCode",
+													"value": "culpa Ut in quis",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"code\": \"cillum Excepteur nisi\",\n  \"value\": \"nostrud Duis amet\"\n}"
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"code\": \"cillum Excepteur nisi\",\n  \"value\": \"nostrud Duis amet\"\n}"
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"code\": \"cillum Excepteur nisi\",\n  \"value\": \"nostrud Duis amet\"\n}"
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								},
+								{
+									"name": "/api/countries/{countryCode}/cities",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/cities",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries",
+												":countryCode",
+												"cities"
+											],
+											"variable": [
+												{
+													"key": "countryCode",
+													"value": "culpa Ut in quis",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successfully retrieved.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/cities",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode",
+														"cities"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+										},
+										{
+											"name": "Bad request.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/cities",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode",
+														"cities"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										},
+										{
+											"name": "You are not authorized to access the resource.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/cities",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode",
+														"cities"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+										},
+										{
+											"name": "Accessing the resource you were trying to reach is forbidden.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/cities",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode",
+														"cities"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+										},
+										{
+											"name": "The resource you were trying to reach is not found.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/smartreferencedata-api/api/countries/:countryCode/cities",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"smartreferencedata-api",
+														"api",
+														"countries",
+														":countryCode",
+														"cities"
+													],
+													"variable": [
+														{
+															"key": "countryCode",
+															"value": "culpa Ut in quis",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/countries",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/countries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"countries"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartreferencedata-api/api/countries",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartreferencedata-api",
+												"api",
+												"countries"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/api/search",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1373,12 +4695,27 @@
 							},
 							{
 								"key": "Accept",
-								"value": "*/*"
+								"value": "application/json"
+							},
+							{
+								"key": "APP_ID",
+								"value": "SMART_APP1",
+								"type": "text"
+							},
+							{
+								"key": "USER_ID",
+								"value": "testUser",
+								"type": "text"
+							},
+							{
+								"key": "USER_GROUPS",
+								"value": "ADMIN",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
+							"raw": "{\n  \"code\": \"qui eiusmod velit\",\n  \"type\": \"dolor nostrud\",\n  \"description\": \"voluptate id officia velit\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1386,12 +4723,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/smartreferencedata-api/search",
+							"raw": "{{baseUrl}}/smartreferencedata-api/api/search",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartreferencedata-api",
+								"api",
 								"search"
 							]
 						}
@@ -1404,7 +4742,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
+									"raw": "{\n  \"code\": \"qui eiusmod velit\",\n  \"type\": \"dolor nostrud\",\n  \"description\": \"voluptate id officia velit\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1412,27 +4750,28 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/search",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
+										"api",
 										"search"
 									]
 								}
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "*/*"
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "[\n  {\n    \"code\": \"cillum proident\",\n    \"type\": \"ex proident deserunt Ut do\",\n    \"description\": \"Duis aliquip reprehenderit\",\n    \"descriptionDetail\": \"laborum\"\n  },\n  {\n    \"code\": \"deserunt reprehenderit\",\n    \"type\": \"id sint et\",\n    \"description\": \"laborum qui\",\n    \"descriptionDetail\": \"dolore in\"\n  }\n]"
 						},
 						{
 							"name": "Bad request.",
@@ -1441,7 +4780,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
+									"raw": "{\n  \"code\": \"qui eiusmod velit\",\n  \"type\": \"dolor nostrud\",\n  \"description\": \"voluptate id officia velit\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1449,19 +4788,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/search",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
+										"api",
 										"search"
 									]
 								}
 							},
 							"status": "Bad Request",
 							"code": 400,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -1469,7 +4809,7 @@
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "{}"
 						},
 						{
 							"name": "You are not authorized to access the resource.",
@@ -1478,7 +4818,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
+									"raw": "{\n  \"code\": \"qui eiusmod velit\",\n  \"type\": \"dolor nostrud\",\n  \"description\": \"voluptate id officia velit\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1486,27 +4826,28 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/search",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
+										"api",
 										"search"
 									]
 								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "*/*"
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "[\n  {\n    \"code\": \"cillum proident\",\n    \"type\": \"ex proident deserunt Ut do\",\n    \"description\": \"Duis aliquip reprehenderit\",\n    \"descriptionDetail\": \"laborum\"\n  },\n  {\n    \"code\": \"deserunt reprehenderit\",\n    \"type\": \"id sint et\",\n    \"description\": \"laborum qui\",\n    \"descriptionDetail\": \"dolore in\"\n  }\n]"
 						},
 						{
 							"name": "Accessing the resource you were trying to reach is forbidden.",
@@ -1515,7 +4856,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
+									"raw": "{\n  \"code\": \"qui eiusmod velit\",\n  \"type\": \"dolor nostrud\",\n  \"description\": \"voluptate id officia velit\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1523,27 +4864,28 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/search",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
+										"api",
 										"search"
 									]
 								}
 							},
 							"status": "Forbidden",
 							"code": 403,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "*/*"
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "[\n  {\n    \"code\": \"cillum proident\",\n    \"type\": \"ex proident deserunt Ut do\",\n    \"description\": \"Duis aliquip reprehenderit\",\n    \"descriptionDetail\": \"laborum\"\n  },\n  {\n    \"code\": \"deserunt reprehenderit\",\n    \"type\": \"id sint et\",\n    \"description\": \"laborum qui\",\n    \"descriptionDetail\": \"dolore in\"\n  }\n]"
 						},
 						{
 							"name": "The resource you were trying to reach is not found.",
@@ -1552,7 +4894,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"code\": \"ad consequat aliqua nisi\",\n  \"type\": \"dolor ipsum\",\n  \"description\": \"sit fugiat\"\n}",
+									"raw": "{\n  \"code\": \"qui eiusmod velit\",\n  \"type\": \"dolor nostrud\",\n  \"description\": \"voluptate id officia velit\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1560,19 +4902,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/search",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/search",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
+										"api",
 										"search"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -1580,250 +4923,30 @@
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "{}"
 						}
 					]
 				},
 				{
-					"name": "/import-refdatas",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "*/*"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"file\": \"velit\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"smartreferencedata-api",
-								"import-refdatas"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Successfully retrieved.",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"file\": \"velit\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"import-refdatas"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": "dolore consectetur eiusmod"
-						},
-						{
-							"name": "Bad request.",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"file\": \"velit\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"import-refdatas"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						},
-						{
-							"name": "You are not authorized to access the resource.",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"file\": \"velit\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"import-refdatas"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": "dolore consectetur eiusmod"
-						},
-						{
-							"name": "Accessing the resource you were trying to reach is forbidden.",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"file\": \"velit\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"import-refdatas"
-									]
-								}
-							},
-							"status": "Forbidden",
-							"code": 403,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": "dolore consectetur eiusmod"
-						},
-						{
-							"name": "The resource you were trying to reach is not found.",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"file\": \"velit\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/import-refdatas",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"smartreferencedata-api",
-										"import-refdatas"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "*/*"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						}
-					]
-				},
-				{
-					"name": "/export-refdatas",
+					"name": "/api/expenses/categories",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "*/*"
+								"value": "application/json"
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
+							"raw": "{{baseUrl}}/smartreferencedata-api/api/expenses/categories",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartreferencedata-api",
-								"export-refdatas"
+								"api",
+								"expenses",
+								"categories"
 							]
 						}
 					},
@@ -1834,27 +4957,29 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/expenses/categories",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"export-refdatas"
+										"api",
+										"expenses",
+										"categories"
 									]
 								}
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "*/*"
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
 						},
 						{
 							"name": "Bad request.",
@@ -1862,19 +4987,21 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/expenses/categories",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"export-refdatas"
+										"api",
+										"expenses",
+										"categories"
 									]
 								}
 							},
 							"status": "Bad Request",
 							"code": 400,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -1882,7 +5009,7 @@
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "{}"
 						},
 						{
 							"name": "You are not authorized to access the resource.",
@@ -1890,27 +5017,29 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/expenses/categories",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"export-refdatas"
+										"api",
+										"expenses",
+										"categories"
 									]
 								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "*/*"
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
 						},
 						{
 							"name": "Accessing the resource you were trying to reach is forbidden.",
@@ -1918,27 +5047,29 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/expenses/categories",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"export-refdatas"
+										"api",
+										"expenses",
+										"categories"
 									]
 								}
 							},
 							"status": "Forbidden",
 							"code": 403,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "*/*"
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
 						},
 						{
 							"name": "The resource you were trying to reach is not found.",
@@ -1946,19 +5077,21 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/smartreferencedata-api/export-refdatas",
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/expenses/categories",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartreferencedata-api",
-										"export-refdatas"
+										"api",
+										"expenses",
+										"categories"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
-							"_postman_previewlanguage": "text",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
@@ -1966,7 +5099,183 @@
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "/api/address/types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/smartreferencedata-api/api/address/types",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"smartreferencedata-api",
+								"api",
+								"address",
+								"types"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/address/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"address",
+										"types"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/address/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"address",
+										"types"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "You are not authorized to access the resource.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/address/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"address",
+										"types"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+						},
+						{
+							"name": "Accessing the resource you were trying to reach is forbidden.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/address/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"address",
+										"types"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"code\": \"ullamco aliqua\",\n    \"value\": \"esse nostrud\"\n  },\n  {\n    \"code\": \"commodo Ut dolor proident\",\n    \"value\": \"exercitation non aute\"\n  }\n]"
+						},
+						{
+							"name": "The resource you were trying to reach is not found.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartreferencedata-api/api/address/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartreferencedata-api",
+										"api",
+										"address",
+										"types"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				}
@@ -1976,7 +5285,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080",
+			"value": "http://localhost:8083",
 			"type": "string"
 		}
 	]

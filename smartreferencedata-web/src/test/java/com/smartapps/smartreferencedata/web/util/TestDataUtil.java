@@ -3,7 +3,7 @@ package com.smartapps.smartreferencedata.web.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.smartapps.smartaddress.jpa.dto.AddressDto;
+import com.smartapps.smartlib.dto.AddressDto;
 
 public class TestDataUtil {
 

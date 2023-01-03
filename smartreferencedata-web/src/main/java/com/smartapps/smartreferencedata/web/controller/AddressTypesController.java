@@ -2,7 +2,6 @@ package com.smartapps.smartreferencedata.web.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.http.ResponseEntity;
@@ -23,14 +22,14 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Validated
 @RequestMapping(path = SmartReferenceDataWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
-public class ExpenseController extends CommonController {
+public class AddressTypesController extends CommonController {
 	
-	@Operation(summary = SmartReferenceDataWebUtil.EXPENSE_CATEGORIES_OPERATION)
+	@Operation(summary = SmartReferenceDataWebUtil.ADDRESS_TYPES_OPERATION)
 	@GlobalApiReponsesGet
-	@GetMapping(SmartReferenceDataWebUtil.EXPENSE_CATEGORIES)
-	public ResponseEntity<List<CodeValueDto>> retrieveCategories(HttpServletRequest request) 
+	@GetMapping(SmartReferenceDataWebUtil.ADDRESS_TYPES)
+	public ResponseEntity<List<CodeValueDto>> retrieveAddressTypes() 
 			throws JsonProcessingException {
-		return ResponseEntity.ok().body(expenseServiceFacade.retrieveCategories());
+		return ResponseEntity.ok().body(addressTypeServiceFacade.retrieveAddressTypes());
 	}
 
 }

@@ -2,7 +2,9 @@ package com.smartapps.smartreferencedata.web.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import javax.ws.rs.core.MediaType;
 
 import org.jboss.logging.MDC;
 import org.springframework.http.ResponseEntity;
@@ -33,22 +35,29 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @Validated
-@RequestMapping(SmartReferenceDataWebUtil.CONTEXT_ROOT)
+@RequestMapping(path = SmartReferenceDataWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
 public class AssetDetailController extends CommonController {
 
 	@Operation(summary = SmartReferenceDataWebUtil.REGISTER_ASSETDETAIL_OPERATION)
 	@GlobalApiReponsesPost
 	@PostMapping(SmartReferenceDataWebUtil.REGISTER_ASSETDETAIL)
 	public ResponseEntity<List<AssetDetailDto>> register(
-			@RequestHeader(value = SmartHttpUtil.SA_APP_ID, required = true) String appId,
-			@RequestHeader(value = SmartHttpUtil.SA_USER_ID, required = true) String userId,
-			@Parameter(name = "registerAssetdetail", description = "JSON with AssetDetailDto object in and out", required = true) @Valid @RequestBody AssetDetailDto obj) 
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
+			@Parameter(name = "registerAssetdetail", description = "JSON with AssetDetailDto object in and out", required = true) @Valid @RequestBody AssetDetailDto obj,
+			HttpServletRequest request) 
 			throws JsonProcessingException {
 
 		/** Logging **/
-		MDC.put(SmartHttpUtil.SA_APP_ID, appId);
-		MDC.put(SmartHttpUtil.SA_USER_ID, userId);
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 		
+		obj.setProcApprId(appId);
+		obj.setProcUserId(userId);
+		obj.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
+
 		return ResponseEntity.ok().body(assetDetailServiceFacade.register(obj));
 	}
 
@@ -56,14 +65,7 @@ public class AssetDetailController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartReferenceDataWebUtil.RETRIEVE_ASSETDETAIL_ID)
 	public ResponseEntity<AssetDetailDto> retrieveByAssetDetailId(
-			@RequestHeader(value = SmartHttpUtil.SA_APP_ID, required = true) String appId,
-			@RequestHeader(value = SmartHttpUtil.SA_USER_ID, required = true) String userId,
 			@PathVariable("id") @Valid Integer id) throws JsonProcessingException {
-
-		/** Logging **/
-		MDC.put(SmartHttpUtil.SA_APP_ID, appId);
-		MDC.put(SmartHttpUtil.SA_USER_ID, userId);
-
 		return ResponseEntity.ok().body(assetDetailServiceFacade.retrieveById(id));
 	}
 
@@ -71,17 +73,24 @@ public class AssetDetailController extends CommonController {
 	@GlobalApiReponsesPut
 	@PutMapping(SmartReferenceDataWebUtil.UPDATE_ASSETDETAIL)
 	public ResponseEntity<AssetDetailDto> update(
-			@RequestHeader(value = SmartHttpUtil.SA_APP_ID, required = true) String appId,
-			@RequestHeader(value = SmartHttpUtil.SA_USER_ID, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("id") @Valid Integer id,
-			@Parameter(name = "updateAssetdetail", description = "JSON with AssetDetailDto object in and out", required = true) @Valid @RequestBody AssetDetailDto obj) 
+			@Parameter(name = "updateAssetdetail", description = "JSON with AssetDetailDto object in and out", required = true) @Valid @RequestBody AssetDetailDto obj,
+			HttpServletRequest request) 
 			throws JsonProcessingException {
 			obj.setId(id);
 
 			/** Logging **/
-			MDC.put(SmartHttpUtil.SA_APP_ID, appId);
-			MDC.put(SmartHttpUtil.SA_USER_ID, userId);
+			MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+			MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+			MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
+			obj.setId(id);
+			obj.setProcApprId(appId);
+			obj.setProcUserId(userId);
+			obj.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 			return ResponseEntity.ok().body(assetDetailServiceFacade.update(obj));
 	}
 
@@ -89,13 +98,15 @@ public class AssetDetailController extends CommonController {
 	@GlobalApiReponsesDelete
 	@DeleteMapping(SmartReferenceDataWebUtil.DELETE_ASSETDETAIL)
 	public ResponseEntity<String> deleteById(
-			@RequestHeader(value = SmartHttpUtil.SA_APP_ID, required = true) String appId,
-			@RequestHeader(value = SmartHttpUtil.SA_USER_ID, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("id") @Valid Integer id) {
 
 		/** Logging **/
-		MDC.put(SmartHttpUtil.SA_APP_ID, appId);
-		MDC.put(SmartHttpUtil.SA_USER_ID, userId);
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
 		assetDetailServiceFacade.delete(id);
 		return ResponseEntity.ok().body("DELETED");

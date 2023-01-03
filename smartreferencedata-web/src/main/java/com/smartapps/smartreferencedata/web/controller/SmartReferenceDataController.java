@@ -6,13 +6,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.ws.rs.core.MediaType;
 
-import org.geonames.Toponym;
-import org.geonames.ToponymSearchCriteria;
-import org.geonames.ToponymSearchResult;
-import org.geonames.WebService;
+import org.jboss.logging.MDC;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,6 +35,7 @@ import com.smartapps.smartlib.dto.RegisterRefDataResponseDto;
 import com.smartapps.smartlib.dto.SearchReferenceDataRequestDto;
 import com.smartapps.smartlib.dto.SearchReferenceDataResponseDto;
 import com.smartapps.smartlib.util.SmartHttpUtil;
+import com.smartapps.smartlib.validators.annotations.ValidAppId;
 import com.smartapps.smartreferencedata.web.util.SmartReferenceDataWebUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -46,15 +45,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @Validated
-@RequestMapping(SmartReferenceDataWebUtil.CONTEXT_ROOT)
+@RequestMapping(path = SmartReferenceDataWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
 public class SmartReferenceDataController extends CommonController {
 
 	@Operation(summary = SmartReferenceDataWebUtil.REGISTER_REFDATA_OPERATION)
 	@GlobalApiReponsesPost
 	@PostMapping(SmartReferenceDataWebUtil.REGISTER_REFDATA)
 	public ResponseEntity<ReferenceDataDto> register(
-			@Parameter(name = "registerRefdata", description = "JSON with ReferenceDataDto object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj) 
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
+			@Parameter(name = "registerRefdata", description = "JSON with request object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj) 
 			throws JsonProcessingException {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
 		return ResponseEntity.ok().body(referenceDataServiceFacade.register(obj));
 	}
 
@@ -62,9 +70,18 @@ public class SmartReferenceDataController extends CommonController {
 	@GlobalApiReponsesPost
 	@PostMapping(SmartReferenceDataWebUtil.REGISTER_REFDATA_TYPE)
 	public ResponseEntity<RegisterRefDataResponseDto> registerByType(
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("type") @Valid String type,
-			@Parameter(name = "registerRefdata", description = "JSON with ReferenceDataDto object list in and out", required = true) @Valid @RequestBody List<ReferenceDataDto> objList) 
+			@Parameter(name = "registerRefdata", description = "JSON with request object in and out", required = true) @Valid @RequestBody List<ReferenceDataDto> objList) 
 			throws JsonProcessingException {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
 		return ResponseEntity.ok().body(referenceDataServiceFacade.registerByType(type, objList));
 	}
 
@@ -99,12 +116,21 @@ public class SmartReferenceDataController extends CommonController {
 	@GlobalApiReponsesPut
 	@PutMapping(SmartReferenceDataWebUtil.UPDATE_REFDATA)
 	public ResponseEntity<ReferenceDataDto> update(
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("code") @Valid String code,
 			@PathVariable("type") @Valid String type,
-			@Parameter(name = "updateReferenceData", description = "JSON with ReferenceDataDto object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj) 
+			@Parameter(name = "updateReferenceData", description = "JSON with request object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj) 
 			throws JsonProcessingException {
-			obj.setRefDataCode(code);
-			obj.setRefDataType(type);
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
+		obj.setRefDataCode(code);
+		obj.setRefDataType(type);
 		return ResponseEntity.ok().body(referenceDataServiceFacade.update(obj));
 	}
 
@@ -112,8 +138,17 @@ public class SmartReferenceDataController extends CommonController {
 	@GlobalApiReponsesDelete
 	@DeleteMapping(SmartReferenceDataWebUtil.DELETE_REFDATA)
 	public ResponseEntity<String> deleteById(
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("code") @Valid String code,
 			@PathVariable("type") @Valid String type) {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
 		referenceDataServiceFacade.delete(code, type);
 		return ResponseEntity.ok().body("DELETED");
 	}
@@ -122,7 +157,7 @@ public class SmartReferenceDataController extends CommonController {
 	@GlobalApiReponsesPost
 	@PostMapping(SmartReferenceDataWebUtil.SEARCH_REFDATA)
 	public ResponseEntity<List<SearchReferenceDataResponseDto>> search(
-			@Parameter(name = "searchRefdata", description = "JSON with SearchReferenceDataRequestDto object in and out", required = true) @Valid @RequestBody SearchReferenceDataRequestDto obj) 
+			@Parameter(name = "searchRefdata", description = "JSON with request object in and out", required = true) @Valid @RequestBody SearchReferenceDataRequestDto obj) 
 			throws JsonProcessingException {
 		return ResponseEntity.ok().body(referenceDataServiceFacade.search(obj));
 	}
@@ -139,7 +174,6 @@ public class SmartReferenceDataController extends CommonController {
 		return ResponseEntity
 				.ok()
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename="+ fileName +".json")
-				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.contentLength(jsonData.length())
 				.body(jsonData.getBytes());
 	}

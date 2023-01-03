@@ -18,12 +18,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 @Transactional
-public class ExpenseServiceFacadeImpl extends CommonServiceFacade implements ExpenseServiceFacade {
+public class AddressTypeServiceFacadeImpl extends CommonServiceFacade implements AddressTypeServiceFacade {
 	
-	private static final String REF_DATA_TYPE = "CTY-EXPENSE";
-	
+	private static final String REF_DATA_TYPE = "ADDRESS-TYPE";
+
 	@Override
-	public List<CodeValueDto> retrieveCategories() throws JsonProcessingException {
+	public List<CodeValueDto> retrieveAddressTypes() throws JsonProcessingException {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
@@ -35,8 +35,7 @@ public class ExpenseServiceFacadeImpl extends CommonServiceFacade implements Exp
 		for(ReferenceData refData: refDataList) {
 			objList.add(CodeValueDto.builder()
 					.code(refData.getRefDataCode())
-					.value(refData.getRefDataDescription())
-					.subCodeValues(retrieveSubCategories(refData.getRefDataCode())).build());
+					.value(refData.getRefDataDescription()).build());
 		}
 		
 		log.info(messageService.getMessage(
@@ -45,18 +44,6 @@ public class ExpenseServiceFacadeImpl extends CommonServiceFacade implements Exp
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						SmartLibraryUtil.mapToString(objList, true)}));
-		return objList;
-	}
-
-	private List<CodeValueDto> retrieveSubCategories(String type) {
-		List<CodeValueDto> objList = new ArrayList<>();
-		List<ReferenceData> refDataList = referenceDataService.readByRefDataType(type);
-		for(ReferenceData refData: refDataList) {
-			objList.add(CodeValueDto.builder()
-					.code(refData.getRefDataCode())
-					.value(refData.getRefDataDescription())
-					.subCodeValues(new ArrayList<>()).build());
-		}
 		return objList;
 	}
 
