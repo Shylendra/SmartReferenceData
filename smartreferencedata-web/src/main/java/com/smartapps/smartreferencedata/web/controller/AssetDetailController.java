@@ -45,7 +45,7 @@ public class AssetDetailController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
-			@Parameter(name = "registerAssetdetail", description = "JSON with AssetDetailDto object in and out", required = true) @Valid @RequestBody AssetDetailDto obj,
+			@Parameter(name = "registerAssetdetail", description = "JSON with object in and out", required = true) @Valid @RequestBody AssetDetailDto obj,
 			HttpServletRequest request) 
 			throws JsonProcessingException {
 
@@ -77,7 +77,7 @@ public class AssetDetailController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("id") @Valid Integer id,
-			@Parameter(name = "updateAssetdetail", description = "JSON with AssetDetailDto object in and out", required = true) @Valid @RequestBody AssetDetailDto obj,
+			@Parameter(name = "updateAssetdetail", description = "JSON with object in and out", required = true) @Valid @RequestBody AssetDetailDto obj,
 			HttpServletRequest request) 
 			throws JsonProcessingException {
 			obj.setId(id);

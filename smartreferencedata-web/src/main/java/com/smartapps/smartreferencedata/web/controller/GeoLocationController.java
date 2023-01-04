@@ -30,7 +30,7 @@ public class GeoLocationController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartReferenceDataWebUtil.RETRIEVE_COUNTRIES)
 	public ResponseEntity<List<CodeValueDto>> retrieveCountries() 
-			throws JsonProcessingException {
+			throws Exception {
 		return ResponseEntity.ok().body(geoLocationServiceFacade.retrieveCountries());
 	}
 	

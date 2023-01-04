@@ -40,20 +40,19 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 
-		ReferenceData entityObj = SmartLibraryUtil.map(obj, ReferenceData.class);
-		if(StringUtils.isNotEmpty(obj.getProcTs())) {
-			entityObj.setProcTs(obj.getSqlProcTs());
+		ReferenceData reqEntityObj = smartRefDataAssembler.mapToEntity(obj);
+		ReferenceData resEntityObj = referenceDataService.create(reqEntityObj).get();
+		if(resEntityObj != null) {
+			ReferenceDataDto resObj = smartRefDataAssembler.mapToDto(resEntityObj);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							resObj}));
+			return resObj;
 		}
-		ReferenceDataDto response = SmartLibraryUtil.map(referenceDataService.create(entityObj).get(), ReferenceDataDto.class);
-		
-		log.info(messageService.getMessage(
-				SharedMessages.LOG003_RESPONSE, 
-				new Object[]{
-						this.getClass().getSimpleName(), 
-						new Object(){}.getClass().getEnclosingMethod().getName(),
-						response}));
-
-		return response;
+		return null;
 	}
 
 	@Override
@@ -70,16 +69,13 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 		int updateCount = 0;
 		for(ReferenceDataDto refData : objList) {
 			refData.setRefDataType(type);
-			ReferenceData entityObj = SmartLibraryUtil.map(refData, ReferenceData.class);
-			if(StringUtils.isNotEmpty(refData.getProcTs())) {
-				entityObj.setProcTs(refData.getSqlProcTs());
-			}
+			ReferenceData entityObj = smartRefDataAssembler.mapToEntity(refData);
 			ReferenceData entityObjSaved = referenceDataService.readByRefDataCodeAndRefDataType(entityObj.getRefDataCode(), entityObj.getRefDataType());
 			ReferenceDataDto response = null;
 			if(entityObjSaved == null) {
 				Optional<ReferenceData> entityObjCreated = referenceDataService.create(entityObj);
 				if(entityObjCreated.isPresent()) {
-					response = SmartLibraryUtil.map(entityObjCreated.get(), ReferenceDataDto.class);
+					response = smartRefDataAssembler.mapToDto(entityObjCreated.get());
 					createCount++;
 				}
 			} else {
@@ -90,7 +86,7 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 				if(!desc.equals(savedDesc) || !descDetails.equals(savedDescDetails)) {
 					Optional<ReferenceData> entityObjUpdated = referenceDataService.update(entityObj);
 					if(entityObjUpdated.isPresent()) {
-						response = SmartLibraryUtil.map(entityObjUpdated.get(), ReferenceDataDto.class);
+						response = smartRefDataAssembler.mapToDto(entityObjUpdated.get());
 						updateCount++;
 					}
 				}
@@ -190,28 +186,21 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 
-		ReferenceData entityObjToUpdate = SmartLibraryUtil.map(obj, ReferenceData.class);
-		if(StringUtils.isNotEmpty(obj.getRefDataCode())) {
-			entityObjToUpdate.setRefDataCode(obj.getRefDataCode());
+		ReferenceData entityObj = referenceDataService.readByRefDataCodeAndRefDataType(obj.getRefDataCode(), obj.getRefDataType());
+		if(entityObj != null) {
+			smartRefDataAssembler.mapToEntityForUpdate(entityObj, obj);
+			ReferenceData resEntityObj = referenceDataService.update(entityObj).get();
+			ReferenceDataDto resObj = smartRefDataAssembler.mapToDto(resEntityObj);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							resObj}));
+			return resObj;
+
 		}
-		if(StringUtils.isNotEmpty(obj.getRefDataType())) {
-			entityObjToUpdate.setRefDataType(obj.getRefDataType());
-		}
-		if(StringUtils.isNotEmpty(obj.getRefDataDescription())) {
-			entityObjToUpdate.setRefDataDescription(obj.getRefDataDescription());
-		}
-		if(StringUtils.isNotEmpty(obj.getRefDataDescriptionDetail())) {
-			entityObjToUpdate.setRefDataDescriptionDetail(obj.getRefDataDescriptionDetail());
-		}
-		ReferenceDataDto response = SmartLibraryUtil.map(referenceDataService.update(entityObjToUpdate).get(), ReferenceDataDto.class);
-		
-		log.info(messageService.getMessage(
-				SharedMessages.LOG003_RESPONSE, 
-				new Object[]{
-						this.getClass().getSimpleName(), 
-						new Object(){}.getClass().getEnclosingMethod().getName(),
-						response}));
-		return response;
+		return null;
 	}
 
 	@Override

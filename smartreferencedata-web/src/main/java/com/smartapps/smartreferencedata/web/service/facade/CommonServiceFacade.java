@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.smartapps.smartlib.service.MessageService;
 import com.smartapps.smartreferencedata.jpa.service.AssetDetailService;
 import com.smartapps.smartreferencedata.jpa.service.ReferenceDataService;
+import com.smartapps.smartreferencedata.web.assemblers.SmartRefDataAssembler;
 
 public class CommonServiceFacade {
 
@@ -13,6 +14,9 @@ public class CommonServiceFacade {
 	
 	@Autowired
 	protected AssetDetailService assetDetailService;
+	
+	@Autowired
+	protected SmartRefDataAssembler smartRefDataAssembler;
 
 	@Autowired
 	protected MessageService messageService;

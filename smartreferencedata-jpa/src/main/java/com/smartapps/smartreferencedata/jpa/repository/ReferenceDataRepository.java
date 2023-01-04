@@ -11,7 +11,8 @@ import com.smartapps.smartreferencedata.jpa.entities.ReferenceData;
 
 @Repository
 public interface ReferenceDataRepository extends JpaRepository<ReferenceData, Integer>, JpaSpecificationExecutor<ReferenceData> {
-	Optional<List<ReferenceData>> findByRefDataType(final String refDataType);
+	List<ReferenceData> findAllByOrderByProcTsDesc();
+	Optional<List<ReferenceData>> findByRefDataTypeOrderByProcTsDesc(final String refDataType);
 	Optional<ReferenceData> findByRefDataCodeAndRefDataType(String refDataCode, String refDataType);
 	boolean existsByRefDataCodeAndRefDataType(String refDataCode, String refDataType);
 }

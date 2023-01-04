@@ -61,7 +61,7 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return repository.findAll();
+		return repository.findAllByOrderByProcTsDesc();
 	}
 
 	@Override
@@ -87,7 +87,7 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		Optional<List<ReferenceData>> resp = repository.findByRefDataType(refDataType);
+		Optional<List<ReferenceData>> resp = repository.findByRefDataTypeOrderByProcTsDesc(refDataType);
 		if(resp.isPresent()) {
 			return resp.get();
 		}
@@ -132,19 +132,7 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		
-		Optional<ReferenceData> resp = repository.findByRefDataCodeAndRefDataType(obj.getRefDataCode(), obj.getRefDataType());
-		if(resp.isPresent()) {
-			if(StringUtils.isNotEmpty(obj.getRefDataDescription())) {
-				resp.get().setRefDataDescription(obj.getRefDataDescription());
-			}
-			if(StringUtils.isNotEmpty(obj.getRefDataDescriptionDetail())) {
-				resp.get().setRefDataDescriptionDetail(obj.getRefDataDescriptionDetail());
-			}
-			return Optional.of(repository.save(resp.get()));
-		}
-		
-		return Optional.ofNullable(obj);
+		return Optional.of(repository.save(obj));
 	}
 
 	@Override

@@ -121,7 +121,8 @@ public class SmartReferenceDataController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("code") @Valid String code,
 			@PathVariable("type") @Valid String type,
-			@Parameter(name = "updateReferenceData", description = "JSON with request object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj) 
+			@Parameter(name = "updateReferenceData", description = "JSON with request object in and out", required = true) @Valid @RequestBody ReferenceDataDto obj,
+			HttpServletRequest request) 
 			throws JsonProcessingException {
 		
 		/** Logging **/
@@ -131,6 +132,9 @@ public class SmartReferenceDataController extends CommonController {
 
 		obj.setRefDataCode(code);
 		obj.setRefDataType(type);
+		obj.setProcApprId(appId);
+		obj.setProcUserId(userId);
+		obj.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 		return ResponseEntity.ok().body(referenceDataServiceFacade.update(obj));
 	}
 
