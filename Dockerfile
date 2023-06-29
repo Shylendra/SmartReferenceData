@@ -1,7 +1,5 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=smartreferencedata-web/target/*.jar
-COPY ${JAR_FILE} /usr/app/
-WORKDIR /usr/app/
-RUN sh -c 'touch smartreferencedata-api.jar'
-ENTRYPOINT ["java","-jar","smartreferencedata-api.jar","--spring.profiles.active=aws"]
+FROM openjdk:8
+EXPOSE 8083
+ADD smartreferencedata-web/target/smartreferencedata-api.jar smartreferencedata-api.jar
+ENTRYPOINT ["java","-jar","/smartreferencedata-api.jar"]
 
