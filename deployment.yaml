@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartreferencedata-api
+  labels:
+    app: smartreferencedata-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartreferencedata-api
+  template:
+    metadata:
+      labels:
+        app: smartreferencedata-api
+    spec:
+      containers:
+        - name: smartreferencedata-api
+          image: shylendra2015/smartreferencedata-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8083
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smartreferencedata-api-svc
+spec:
+  ports:
+    - port: 80
+      targetPort: 8083
+      protocol: TCP
+  selector:
+    app: smartreferencedata-api
