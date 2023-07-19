@@ -22,12 +22,10 @@
 	</properties>
 
 	<repositories>
-	<!-- 
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
-		 -->
 	</repositories>
 
 	<dependencyManagement>
@@ -57,15 +55,8 @@
 		</dependency>
 
 		<!-- SMARTAPP Dependencies -->
-		<!-- 
 		<dependency>
-			<groupId>com.github.Shylendra</groupId>
-			<artifactId>SmartLibrary</artifactId>
-			<version>${smart-library.version}</version>
-		</dependency>
-		 -->
-		<dependency>
-			<groupId>com.smartapps.smartlib</groupId>
+			<groupId>${smart-library.groupId}</groupId>
 			<artifactId>smartlibrary</artifactId>
 			<version>${smart-library.version}</version>
 		</dependency>

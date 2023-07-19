@@ -54,7 +54,7 @@ public class AssetDetailController extends CommonController {
 		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
 		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 		
-		obj.setProcApprId(appId);
+		obj.setProcAppId(appId);
 		obj.setProcUserId(userId);
 		obj.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 
@@ -88,7 +88,7 @@ public class AssetDetailController extends CommonController {
 			MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
 			obj.setId(id);
-			obj.setProcApprId(appId);
+			obj.setProcAppId(appId);
 			obj.setProcUserId(userId);
 			obj.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 			return ResponseEntity.ok().body(assetDetailServiceFacade.update(obj));

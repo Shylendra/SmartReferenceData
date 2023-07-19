@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
 
 import javax.transaction.Transactional;
 
 import org.codehaus.plexus.util.StringUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -133,6 +136,24 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 						SmartLibraryUtil.mapToString(objList, true)}));
 		
 		return objList;
+	}
+
+	@Override
+	public Page<ReferenceDataDto> retrieveAll(Pageable pageable) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		
+		Page<ReferenceData> entityPageObjs = referenceDataService.readAll(pageable);
+		Page<ReferenceDataDto> dtoPageObj = entityPageObjs.map(new Function<ReferenceData, ReferenceDataDto>() {
+		    @Override
+		    public ReferenceDataDto apply(ReferenceData entityObj) {
+		        return SmartLibraryUtil.map(entityObj, ReferenceDataDto.class);
+		    }
+		});
+		return dtoPageObj;
 	}
 
 	@Override
@@ -305,6 +326,16 @@ public class ReferenceDataServiceFacadeImpl extends CommonServiceFacade implemen
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						response.toString()}));
 		return response;
+	}
+
+	@Override
+	public void delete(List<Integer> ids) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		referenceDataService.delete(ids);
 	}
 
 }

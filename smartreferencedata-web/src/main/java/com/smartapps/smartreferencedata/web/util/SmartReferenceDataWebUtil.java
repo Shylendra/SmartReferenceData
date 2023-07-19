@@ -24,6 +24,9 @@ public class SmartReferenceDataWebUtil {
 	public static final String RETRIEVE_REFDATAS_OPERATION = "Retrieve refdatas";
 	public static final String RETRIEVE_REFDATAS = "api/refdatas";
 	
+	public static final String RETRIEVE_REFDATAS_PAGE_OPERATION = "Retrieve refdatas per page";
+	public static final String RETRIEVE_REFDATAS_PAGE = "api/refdatas/page/{pageIndex}/{pageSize}";
+	
 	public static final String RETRIEVE_REFDATA_TYPE_OPERATION = "Retrieve refdatas by type";
 	public static final String RETRIEVE_REFDATA_TYPE = "api/refdatas/{type}";
 	
@@ -38,6 +41,9 @@ public class SmartReferenceDataWebUtil {
 	
 	public static final String DELETE_REFDATA_OPERATION = "Delete refdatas by id";
 	public static final String DELETE_REFDATA = "api/refdatas/{code}/{type}";
+	
+	public static final String DELETE_REFDATA_INBULK_OPERATION = "Delete refdatas by ids(bulk delete)";
+	public static final String DELETE_REFDATA_INBULK = "api/refdatas/bulk-delete";
 
 	public static final String SEARCH_REFDATA_OPERATION = "Search refdata";
 	public static final String SEARCH_REFDATA = "api/refdatas/search";

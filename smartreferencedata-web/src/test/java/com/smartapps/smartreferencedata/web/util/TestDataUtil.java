@@ -19,7 +19,7 @@ public class TestDataUtil {
 	public static AddressDto prepareAddress(int id) {
 		return AddressDto.builder()
 				.id(id)
-				.customerId(id+1)
+				.customerId(id+"1")
 				.addressLine1("addressLine"+id)
 				.addressLine2("addressLine"+ (id +1))
 				.city("city"+id)

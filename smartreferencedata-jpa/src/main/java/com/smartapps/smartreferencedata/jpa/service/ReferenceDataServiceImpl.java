@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.codehaus.plexus.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.smartapps.smartlib.dto.SearchReferenceDataRequestDto;
@@ -62,6 +63,16 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		return repository.findAllByOrderByProcTsDesc();
+	}
+
+	@Override
+	public Page<ReferenceData> readAll(Pageable pageable) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		return repository.findAllByOrderByProcTsDesc(pageable);
 	}
 
 	@Override
@@ -146,6 +157,16 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 		if(resp.isPresent()) {
 			repository.deleteById(resp.get().getId());
 		}
+	}
+
+	@Override
+	public void delete(List<Integer> ids) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		repository.deleteByIdIn(ids);
 	}
 	
 }

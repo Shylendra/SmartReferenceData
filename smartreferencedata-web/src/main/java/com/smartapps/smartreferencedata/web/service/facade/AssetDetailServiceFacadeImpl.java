@@ -42,7 +42,7 @@ public class AssetDetailServiceFacadeImpl extends CommonServiceFacade implements
 					.name(obj.getName())
 					.category(obj.getCategory())
 					.journeyDate(obj.getJourneyDate())
-					.appId(obj.getProcApprId())
+					.appId(obj.getProcAppId())
 					.userId(obj.getProcUserId()).build());
 			if(searchResult.isPresent()) {
 				response = searchResult.get();

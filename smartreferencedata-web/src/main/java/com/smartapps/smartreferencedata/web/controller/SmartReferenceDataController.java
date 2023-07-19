@@ -9,6 +9,9 @@ import javax.validation.constraints.NotNull;
 import javax.ws.rs.core.MediaType;
 
 import org.jboss.logging.MDC;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -104,6 +107,17 @@ public class SmartReferenceDataController extends CommonController {
 		return ResponseEntity.ok().body(referenceDataServiceFacade.retrieveAll());
 	}
 
+	@Operation(summary = SmartReferenceDataWebUtil.RETRIEVE_REFDATAS_PAGE_OPERATION)
+	@GlobalApiReponsesGet
+	@GetMapping(SmartReferenceDataWebUtil.RETRIEVE_REFDATAS_PAGE)
+	public Page<ReferenceDataDto> retrieveAllPage(
+			@PathVariable(name="pageIndex", required=true) @Valid Integer pageIndex,
+			@PathVariable(name="pageSize", required=true) @Valid Integer pageSize) 
+			throws Exception {
+		Pageable paging = PageRequest.of(pageIndex, pageSize);
+		return referenceDataServiceFacade.retrieveAll(paging);
+	}	
+
 	@Operation(summary = SmartReferenceDataWebUtil.RETRIEVE_REFDATA_TYPE_OPERATION)
 	@GlobalApiReponsesGet
 	@GetMapping(SmartReferenceDataWebUtil.RETRIEVE_REFDATA_TYPE)
@@ -132,7 +146,7 @@ public class SmartReferenceDataController extends CommonController {
 
 		obj.setRefDataCode(code);
 		obj.setRefDataType(type);
-		obj.setProcApprId(appId);
+		obj.setProcAppId(appId);
 		obj.setProcUserId(userId);
 		obj.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 		return ResponseEntity.ok().body(referenceDataServiceFacade.update(obj));
@@ -154,6 +168,24 @@ public class SmartReferenceDataController extends CommonController {
 		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
 		referenceDataServiceFacade.delete(code, type);
+		return ResponseEntity.ok().body("DELETED");
+	}
+
+	@Operation(summary = SmartReferenceDataWebUtil.DELETE_REFDATA_INBULK_OPERATION)
+	@GlobalApiReponsesDelete
+	@PostMapping(SmartReferenceDataWebUtil.DELETE_REFDATA_INBULK)
+	public ResponseEntity<String> deleteByIdIn(
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
+			@Parameter(name = "ids", required = true) @Valid @RequestBody List<Integer> ids) {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
+		referenceDataServiceFacade.delete(ids);
 		return ResponseEntity.ok().body("DELETED");
 	}
 
